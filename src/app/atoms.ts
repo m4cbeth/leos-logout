@@ -11,4 +11,5 @@ const getAdjustedDate = () => {
 //   return now.toISOString().split('T')[0]; // Return as YYYY-MM-DD
 };
 
-const dateAtom = atom(getAdjustedDate());
+export const dateAtom = atom(getAdjustedDate());
+export const salesAtom = atom(0)
