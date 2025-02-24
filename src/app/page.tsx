@@ -24,8 +24,16 @@ export default function Home() {
 
   return (
     <div className="items-center justify-items-center min-h-screen p-5   font-[family-name:var(--font-geist-sans)]">
-      <main className="flex justify-center border p-3 justify-items-center flex-col gap-8 row-start-2 sm:items-start">
+      <main className="flex justify-center border w-[500px] p-3 justify-items-center flex-col gap-8 row-start-2 sm:items-start">
         <h1 className="text-2xl font-thin text-center">Leo's Logout</h1>
+
+
+    <Tabs defaultValue="input" className="w-full">
+      <TabsList className="grid w-full grid-cols-2">
+        <TabsTrigger value="account">Input</TabsTrigger>
+        <TabsTrigger value="password">To Post</TabsTrigger>
+      </TabsList>
+      <TabsContent value="account">
         <form className="flex flex-col">
           <div className="flex my-2">
             <div>
@@ -88,6 +96,26 @@ export default function Home() {
           
         
         </form>
+      </TabsContent>
+      <TabsContent value="password">
+        <div className="relative">
+          <Button className="absolute right-0">
+            Copy
+          </Button>
+          Date: {}
+          <br></br>
+          Sales: {sales}
+          <br></br>
+          Food: {foodSales}
+        </div>
+      </TabsContent>
+    </Tabs>
+  
+
+
+
+
+
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
       </footer>
