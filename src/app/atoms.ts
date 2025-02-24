@@ -13,3 +13,4 @@ const getAdjustedDate = () => {
 
 export const dateAtom = atom(getAdjustedDate());
 export const salesAtom = atom(0)
+export const foodSalesAtom = atom(0)

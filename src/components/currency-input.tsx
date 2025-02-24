@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const CurrencyInput = () => {
+const CurrencyInput = ({jotaiSetter}) => {
   const [rawValue, setRawValue] = useState(""); // Stores raw numbers like "1", "12", "123"
   const [displayValue, setDisplayValue] = useState("$0.00"); // Stores formatted currency
 
@@ -15,9 +15,8 @@ const CurrencyInput = () => {
     setRawValue(input); // Store the raw number
 
     const cents = parseInt(input, 10) / 100; // Convert to cents
-    setDisplayValue(
-      cents.toLocaleString("en-US", { style: "currency", currency: "USD" })
-    );
+    setDisplayValue(cents.toLocaleString("en-US", { style: "currency", currency: "USD" }));
+    jotaiSetter(Number(input)/100)
   };
 
   return (
