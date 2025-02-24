@@ -23,12 +23,13 @@ export default function Home() {
   const [discountPercent, setDiscPercent] = useAtom(atoms.discountsPercentAtom)
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+    <div className="items-center justify-items-center min-h-screen p-5   font-[family-name:var(--font-geist-sans)]">
+      <main className="flex justify-center border p-3 justify-items-center flex-col gap-8 row-start-2 sm:items-start">
+        <h1 className="text-2xl font-thin text-center">Leo's Logout</h1>
         <form className="flex flex-col">
           <div className="flex my-2">
             <div>
-              <Heading title="Date"/>
+              <Heading title="Date:"/>
             </div>
             <div className="ml-5">
               <DatePicker/> {/** todo: go into the date picker and make it's state refer to atom */}
@@ -37,7 +38,7 @@ export default function Home() {
           </div>
           <div className="flex my-2">
             <div>
-              <Heading title="Shift" />
+              <Heading title="Shift:" />
             </div>
             <div className="ml-5">
               <Tabs defaultValue="Day" value={selectedTab} onValueChange={setSelectedTab}>
@@ -50,7 +51,7 @@ export default function Home() {
           </div>
           <div className="flex my-2 justify-between">
             <div>
-              <Heading title="Sales"/>
+              <Heading title="Sales:"/>
             </div>
             <div className="ml-5">
               <CurrencyInput key="sales" jotaiSetter={setSales}/>
@@ -59,7 +60,7 @@ export default function Home() {
           <EntryRow>
             <div>
               <h2>
-                Food Sales (excl. discounts)
+                Food Sales (excl. discounts):
               </h2>
             </div>
             <div className="ml-5">
@@ -68,7 +69,7 @@ export default function Home() {
           </EntryRow>
           <EntryRow>
             <div>
-              <Heading title="Discounts ($)"/>
+              <Heading title="Discounts ($):"/>
             </div>
             <div>
               <CurrencyInput key="discountsdollars" jotaiSetter={setDiscAmount}/>
@@ -76,7 +77,7 @@ export default function Home() {
           </EntryRow>
           <EntryRow>
             <div>
-              <Heading title="Discounts (%)"/>
+              <Heading title="Discounts (%):"/>
             </div>
             <div>
               <PercentInput key="discountspercent" jotaiSetter={setDiscPercent}/>

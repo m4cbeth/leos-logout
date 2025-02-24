@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
 import ThemeButton from "@/components/made/themebutton";
+import Image from "next/image";
 
 
 const geistSans = Geist({
@@ -48,6 +49,11 @@ export default function RootLayout({
 const Header = () => (
   <div className="flex">
     <div className="flex-1"></div>
-    <ThemeButton/>
+    <div className="flex justify-center flex-1">
+      <Image alt="Leopold's Tavern" src="/leos-logo.avif" width={120} height={12} />
+    </div>
+    <div className="flex-1 flex justify-end">
+      <ThemeButton/>
+    </div>
   </div>
 )
