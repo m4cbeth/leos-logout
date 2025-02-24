@@ -1,6 +1,5 @@
 import { atom } from 'jotai'
 
-
 // Helper function to handle doing a logout after midnight
 const getAdjustedDate = () => {
   const now = new Date();
@@ -14,3 +13,5 @@ const getAdjustedDate = () => {
 export const dateAtom = atom(getAdjustedDate());
 export const salesAtom = atom(0)
 export const foodSalesAtom = atom(0)
+export const discountsAmountAtom = atom(0)
+export const discountsPercentAtom = atom(0)
