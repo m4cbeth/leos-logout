@@ -16,11 +16,14 @@ import PercentInput from "@/components/percent-input";
 export default function Home() {
   
   // todo date jotai
+  const [todaysDate, setDate] =useAtom(atoms.dateAtom)
   const [selectedTab, setSelectedTab] = useState("Day")
   const [sales, setSales] = useAtom(atoms.salesAtom)
   const [foodSales, setFoodSales] = useAtom(atoms.foodSalesAtom)
   const [discountsAmount, setDiscAmount] = useAtom(atoms.discountsAmountAtom)
   const [discountPercent, setDiscPercent] = useAtom(atoms.discountsPercentAtom)
+  const [takeout, setTakeout] = useAtom(atoms.takeoutAtom)
+  const [promo, setPromo] = useAtom(atoms.promoAtom)
 
   return (
     <div className="items-center justify-items-center min-h-screen p-5   font-[family-name:var(--font-geist-sans)]">
@@ -72,8 +75,12 @@ export default function Home() {
               </h2>
             </div>
             <div className="ml-5">
-              <CurrencyInput key="food" jotaiSetter={setSales}/>
+              <CurrencyInput key="food" jotaiSetter={setFoodSales}/>
             </div>
+          </EntryRow>
+          <EntryRow>
+            <Heading title="Takeout"/>
+            <CurrencyInput key={'takeout'} jotaiSetter={setTakeout}/>
           </EntryRow>
           <EntryRow>
             <div>
@@ -91,7 +98,10 @@ export default function Home() {
               <PercentInput key="discountspercent" jotaiSetter={setDiscPercent}/>
             </div>
           </EntryRow>
-
+          <EntryRow>
+            <Heading title="Promo"/>
+            <CurrencyInput key={'promo'} jotaiSetter={setPromo}/>
+          </EntryRow>
 
           
         
@@ -102,11 +112,16 @@ export default function Home() {
           <Button onClick={copyToPostText} className="absolute right-0">
             Copy
           </Button>
-          Date: {}
-          <br></br>
-          Sales: {sales}
-          <br></br>
-          Food: {foodSales}
+          DATE: {todaysDate.toDateString()}
+          <br />
+          SALES: {sales}
+          <br />
+          FOOD SALES (excl. discounts): {foodSales}
+          <br />
+          TAKEOUT SALES: {takeout}
+          <br />
+          Discounts: ${discountsAmount}{`    |    `}{discountPercent}
+          <br />
         </div>
       </TabsContent>
     </Tabs>
@@ -117,6 +132,9 @@ export default function Home() {
     </div>
   );
 }
+
+
+
 
 const Heading = ({title}) => (
   <h2>
