@@ -30,10 +30,10 @@ export default function Home() {
 
     <Tabs defaultValue="input" className="w-full">
       <TabsList className="grid w-full grid-cols-2">
-        <TabsTrigger value="account">Input</TabsTrigger>
-        <TabsTrigger value="password">To Post</TabsTrigger>
+        <TabsTrigger value="input">Input</TabsTrigger>
+        <TabsTrigger value="topost">To Post</TabsTrigger>
       </TabsList>
-      <TabsContent value="account">
+      <TabsContent value="input">
         <form className="flex flex-col">
           <div className="flex my-2">
             <div>
@@ -97,9 +97,9 @@ export default function Home() {
         
         </form>
       </TabsContent>
-      <TabsContent value="password">
-        <div className="relative">
-          <Button className="absolute right-0">
+      <TabsContent value="topost">
+        <div id="output" className="relative">
+          <Button onClick={copyToPostText} className="absolute right-0">
             Copy
           </Button>
           Date: {}
@@ -110,11 +110,6 @@ export default function Home() {
         </div>
       </TabsContent>
     </Tabs>
-  
-
-
-
-
 
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
@@ -133,3 +128,11 @@ const EntryRow = ({children}) => (
     {children}
   </div>
 )
+
+const copyToPostText = () => {
+  const div = document.getElementById("output")
+  if (div) {
+    navigator.clipboard.writeText(div.innerText)
+  }
+  alert("Copied! Now go post and have a great night!")
+}
