@@ -3,7 +3,7 @@ import { Input } from "./ui/input";
 
 export default function PercentInput({jotSet, jotVal = 0}) {
   const [rawValue, setRawValue] = useState(""); // Stores digits like "1234"
-  const [displayValue, setDisplayValue] = useState("0.00%"); // What the user sees
+  const [displayValue, setDisplayValue] = useState(jotVal || "0.00%"); // What the user sees
 
   const handleChange = (e) => {
     const digits = e.target.value.replace(/\D/g, ""); // Keep only numbers

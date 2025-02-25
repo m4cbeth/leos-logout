@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import { useAtom, useAtomValue } from "jotai";
+import { useAtom } from "jotai";
 import * as atoms from "@/app/atoms"
 import { DatePicker } from "@/components/made/datepicker";
 import { Button } from "@/components/ui/button";
@@ -17,7 +17,6 @@ import { FormattedLogout } from "@/components/made/formatted-output";
 export default function Home() {
   
  
-  const todaysDate = useAtomValue(atoms.dateAtom)
   const [selectedTab, setSelectedTab] = useState("Day")
   const [sales, setSales] = useAtom(atoms.salesAtom)
   const [foodSales, setFoodSales] = useAtom(atoms.foodSalesAtom)
@@ -127,7 +126,7 @@ export default function Home() {
           </div>
           <div>
             <Heading title={'Issues/Concerns/Comments'} />
-            <Textarea value={flow} onChangeValue={setIssues} placeholder="Describe how the service went." />
+            <Textarea value={issues} onChangeValue={setIssues} placeholder="Describe how the service went." />
           </div>
           <div>
             <Heading title="86'd Bar Products" />
