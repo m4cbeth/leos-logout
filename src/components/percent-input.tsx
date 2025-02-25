@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Input } from "./ui/input";
 
-export default function PercentInput({jotaiSetter}) {
+export default function PercentInput({jotSet, jotVal = 0}) {
   const [rawValue, setRawValue] = useState(""); // Stores digits like "1234"
   const [displayValue, setDisplayValue] = useState("0.00%"); // What the user sees
 
@@ -20,7 +20,7 @@ export default function PercentInput({jotaiSetter}) {
     const formatted = (numericValue * 100).toFixed(2) + "%"; // Format as percentage
 
     setDisplayValue(formatted)
-    jotaiSetter(formatted)
+    jotSet(formatted)
   };
 
   return (

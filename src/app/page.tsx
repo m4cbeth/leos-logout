@@ -12,6 +12,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { ManagerDiscountDisplay, ManagerDiscountEntry } from "@/components/made/manager-discount";
 import { Input } from "@/components/ui/input";
 import { EightySixList } from "@/components/made/eighty-six-list";
+import { FormattedLogout } from "@/components/made/formatted-output";
 
 export default function Home() {
   
@@ -81,7 +82,7 @@ export default function Home() {
               <Heading title="Sales:"/>
             </div>
             <div className="">
-              <CurrencyInput key="sales" jotaiSetter={setSales}/>
+              <CurrencyInput key="sales" jotVal={sales} jotSet={setSales}/>
             </div>
           </div>
           <div className="flex flex-col">
@@ -89,19 +90,19 @@ export default function Home() {
               <Heading title="Food Sales (excl. discounts):" />
             </div>
             <div  className="font-thin">
-              <CurrencyInput key="food" jotaiSetter={setFoodSales}/>
+              <CurrencyInput key="food" jotVal={foodSales} jotSet={setFoodSales}/>
             </div>
           </div>
           <div className="">
             <Heading title="Takeout"/>
-            <CurrencyInput key={'takeout'} jotaiSetter={setTakeout}/>
+            <CurrencyInput key={'takeout'} jotVal={takeout} jotSet={setTakeout}/>
           </div>
           <div className="">
             <div>
               <Heading title="Discounts ($):"/>
             </div>
             <div>
-              <CurrencyInput key="discountsdollars" jotaiSetter={setDiscAmount}/>
+              <CurrencyInput key="discountsdollars" jotVal={discountsAmount} jotSet={setDiscAmount}/>
             </div>
           </div>
           <div>
@@ -109,16 +110,16 @@ export default function Home() {
               <Heading title="Discounts (%):"/>
             </div>
             <div>
-              <PercentInput key="discountspercent" jotaiSetter={setDiscPercent}/>
+              <PercentInput key="discountspercent" jotVal={discountPercent} jotSet={setDiscPercent}/>
             </div>
           </div>
           <div>
             <Heading title="Promos"/>
-            <CurrencyInput key={'promo'} jotaiSetter={setPromo}/>
+            <CurrencyInput key={'promo'} jotVal={promo} jotSet={setPromo}/>
           </div>
           <div>
             <Heading title={'Float'}/>
-            <CurrencyInput key={'float'} jotaiSetter={setFloat}/>
+            <CurrencyInput key={'float'} jotVal={float} jotSet={setFloat}/>
           </div>
           <div>
             <Heading title={'Flow'} />
@@ -192,44 +193,11 @@ export default function Home() {
       {/* ----------------------------------------------- */}
 
       <TabsContent value="topost">
-        <div className="formatted-output-block">
-          <Button variant="outline" className="my-3 w-full">Copy</Button>
-          <div id="output" className="border p-1 m-1 text-sm">
-            DATE: {todaysDate.toDateString()}
-            <br />
-            SALES: ${sales}
-            <br />
-            FOOD SALES (excl. discounts): ${foodSales}
-            <br />
-            TAKEOUT SALES: ${takeout}
-            <br />
-            DISCOUNTS: ${discountsAmount}{` | `}{discountPercent}
-            <br />
-            PROMOS: ${promo}
-            <br />
-            FLOAT: ${float}
-            <br />
-            FLOW:
-            <br />
-            {flow}
-            <br />
-            ISSUES/CONCERNS/COMMENTS:
-            <br />
-            {issues}
-            <br />
-            86D
-            <br />
-            <EightySixList />
-            <br />
-            MANAGER DISCOUNTS:
-            <br />
-            <ManagerDiscountDisplay />
-        </div>
-          
+        <FormattedLogout/>
+                  
 
 
 
-        </div>
       </TabsContent>
     </Tabs>
 
