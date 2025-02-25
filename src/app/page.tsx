@@ -8,6 +8,7 @@ import { useState } from "react";
 import CurrencyInput from "@/components/currency-input";
 import PercentInput from "@/components/percent-input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Textarea } from "@/components/ui/textarea"
 
 
 
@@ -22,6 +23,8 @@ export default function Home() {
   const [discountPercent, setDiscPercent] = useAtom(atoms.discountsPercentAtom)
   const [takeout, setTakeout] = useAtom(atoms.takeoutAtom)
   const [promo, setPromo] = useAtom(atoms.promoAtom)
+  const [float, setFloat] = useAtom(atoms.floatAtom)
+  const [flow, setFlow] = useAtom(atoms.flowAtom)
 
   return (
     <div className="items-center justify-items-center min-h-screen p-5  max-w-lg mx-auto font-[family-name:var(--font-geist-sans)]">
@@ -101,8 +104,16 @@ export default function Home() {
             <Heading title="Promo"/>
             <CurrencyInput key={'promo'} jotaiSetter={setPromo}/>
           </div>
+          <div>
+            <Heading title={'Float'}/>
+            <CurrencyInput key={'float'} jotaiSetter={setFloat}/>
+          </div>
+          <div>
+            <Heading title={'Flow'} />
+            Jotai atom = {flow}
+            <Textarea value={flow} onChangeValue={setFlow} placeholder="Describe how the service went." />
+          </div>
 
-          
         
         </form>
       </TabsContent>
@@ -120,6 +131,14 @@ export default function Home() {
           Discounts: ${discountsAmount}{`    |    `}{discountPercent}
           <br />
           Promos: ${promo}
+          <br />
+          Float: ${float}
+          <br />
+          Flow: <br />
+          {flow}
+
+
+
         </div>
       </TabsContent>
     </Tabs>

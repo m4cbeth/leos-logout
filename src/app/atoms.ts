@@ -17,6 +17,8 @@ export const discountsAmountAtom = atom(0)
 export const discountsPercentAtom = atom(0)
 export const takeoutAtom = atom(0)
 export const promoAtom = atom(0)
+export const floatAtom = atom(0)
+export const flowAtom = atom("")
 
 // ===================DONE==================
 // DATE:Feb 23 night
@@ -25,8 +27,8 @@ export const promoAtom = atom(0)
 // TAKEOUT SALES :$1343.54
 // DISCOUNT TOTAL:$412.68 3.26%
 // PROMO TOTAL: x10 = $53.50
-// ===================TODO==================
 // FLOAT: $350
+// ===================TODO==================
 // FLOW
 
 // ▪︎
