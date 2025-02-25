@@ -44,7 +44,7 @@ export default function Home() {
     <Tabs defaultValue="input" className="w-full">
       <TabsList className="grid w-full grid-cols-2">
         <TabsTrigger value="input">Input</TabsTrigger>
-        <TabsTrigger value="topost">To Post</TabsTrigger>
+        <TabsTrigger value="topost">Formatted</TabsTrigger>
       </TabsList>
       <TabsContent value="input">
         <form className="flex flex-col">
@@ -126,33 +126,13 @@ export default function Home() {
           </div>
           <div>
             <Heading title={'DISCOUNTS'} />
-            <div className="flex">
-              <Input placeholder="Manager's Name"
-              value={managerDisc}
-              onChangeValue={setMangDisc}
-              />
-              <OnehundredOrFiftyDropdown/>
-            </div>
+            
           </div>
 
         
         </form>
       </TabsContent>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
       <TabsContent value="topost">
         <Button variant="outline" onClick={copyToPostText} className="my-3 w-full">Copy</Button>
         <div id="output" className="border p-1 m-1 text-sm">

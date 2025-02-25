@@ -13,20 +13,21 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
-export function OnehundredOrFiftyDropdown() {
-  const [position, setPosition] = React.useState("bottom")
+export function OnehundredOrFiftyDropdown({setter}) {
+  const [percent, setPercent] = React.useState(null)
+  
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">Percent</Button>
+        <Button variant="outline">{percent || "Percent"}</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>Select Percent Discounted</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
-          <DropdownMenuRadioItem value="100%">50%</DropdownMenuRadioItem>
+        <DropdownMenuRadioGroup value={percent} onValueChange={setPercent}>
           <DropdownMenuRadioItem value="50%">50%</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="100%">100%</DropdownMenuRadioItem>
         </DropdownMenuRadioGroup>
       </DropdownMenuContent>
     </DropdownMenu>

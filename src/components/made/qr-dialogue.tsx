@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import {
   Dialog,
   DialogContent,
+  DialogClose,
   DialogDescription,
   DialogFooter,
   DialogHeader,
@@ -29,7 +30,9 @@ export function QRCodeDialogue() {
           <Image alt="QR Code" width={400} height={400} src="/leos-logout-qrcode.png"/>
         </div>
         <DialogFooter>
-          <Button type="submit">Close</Button>
+          <DialogClose asChild>
+            <Button type="button" variant="secondary">Close</Button>
+          </DialogClose>
         </DialogFooter>
       </DialogContent>
     </Dialog>
