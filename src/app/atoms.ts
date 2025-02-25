@@ -21,7 +21,7 @@ export const floatAtom = atom(0)
 export const flowAtom = atom("")
 export const issuesAtom = atom("")
 export const eightySixAtom = atom([])
-export const managerDiscounts = atom([])
+export const managerDiscountsAtom = atom([])
 
 // ================WORKING================
 

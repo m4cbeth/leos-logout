@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import { useAtom } from "jotai";
+import { useAtom, useAtomValue } from "jotai";
 import * as atoms from "@/app/atoms"
 import { DatePicker } from "@/components/made/datepicker";
 import { Button } from "@/components/ui/button";
@@ -9,14 +9,14 @@ import CurrencyInput from "@/components/currency-input";
 import PercentInput from "@/components/percent-input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Textarea } from "@/components/ui/textarea"
-import { ManagerDiscountEntry } from "@/components/made/manager-discount";
+import { ManagerDiscountDisplay, ManagerDiscountEntry } from "@/components/made/manager-discount";
 import { Input } from "@/components/ui/input";
 
 
 export default function Home() {
   
  
-  const [todaysDate, setDate] =useAtom(atoms.dateAtom)
+  const todaysDate = useAtomValue(atoms.dateAtom)
   const [selectedTab, setSelectedTab] = useState("Day")
   const [sales, setSales] = useAtom(atoms.salesAtom)
   const [foodSales, setFoodSales] = useAtom(atoms.foodSalesAtom)
@@ -29,7 +29,6 @@ export default function Home() {
   const [issues, setIssues] = useAtom(atoms.issuesAtom)
   const [eightySixToAdd, set86] = useState("")
   const [eightySixItems, set86Items] = useAtom(atoms.eightySixAtom)
-  const [managerDiscToAdd, setMangDisc] = useState("")
 
   const add86 = () => {
     const new86Items = [...eightySixItems]
@@ -149,10 +148,8 @@ export default function Home() {
           </div>
           <div>
             <Heading title={'Manager Discounts'} />
-            <ManagerDiscountEntry setter={setMangDisc} />
-            <Button type="button" variant="outline" className="w-full">
-              Add Discount
-            </Button>
+            <ManagerDiscountDisplay />
+            <ManagerDiscountEntry />            
           </div>
 
         
@@ -189,6 +186,10 @@ export default function Home() {
           86D
           <br />
           <EightSixList />
+          <br />
+          MANAGER DISCOUNTS:
+          <br />
+          <ManagerDiscountDisplay />
           
 
 
