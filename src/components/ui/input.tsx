@@ -7,6 +7,7 @@ const Input = React.forwardRef<HTMLInputElement,
 React.ComponentProps<"input"> & {
   onChangeValue?: (value: string) => void;
   jotSet?: (value: any) => void;
+  suffix?: any;
 }
 >(
   ({ className, jotSet, onChangeValue, value, type, ...props }, ref) => {
