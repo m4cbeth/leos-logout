@@ -26,9 +26,6 @@ export const managerDiscountsAtom = atom([])
 // ================WORKING================
 
 
-// 86D
-
-// ▪︎
 
 // ===================TODO==================
 
@@ -48,23 +45,15 @@ export const managerDiscountsAtom = atom([])
 // Training Discount (x100)
 // Pint/Pickle cards/ Team nachos (amount of cards/orders)
 // Guest Satisfaction (% and reason)
-
 // PROMO:
 // Deletes:
 // WASTE
-
 // ▪︎
-
 // MAINTENANCE
-
 // ▪︎
-
 // FOH CUT TIMES
-
 // ▪︎
 //
-
-
 // ===================DONE==================
 // DATE:Feb 23 night
 // SALES: $12861.03
@@ -74,8 +63,20 @@ export const managerDiscountsAtom = atom([])
 // PROMO TOTAL: x10 = $53.50
 // FLOAT: $350
 // FLOW
-
+//
 // ▪︎
 // ISSUES/CONCERNS/COMMENTS
-
 // ▪︎
+//
+// 86D
+// ▪︎
+
+
+
+
+
+
+
+
+
+

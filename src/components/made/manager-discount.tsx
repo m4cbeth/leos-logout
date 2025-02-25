@@ -45,10 +45,11 @@ export function ManagerDiscountEntry() {
 
   return (
     <div>
-      <div className="flex">
+      <div className="flex items-center">
           <Input placeholder="Manager's Name"
               value={managerName}
               onChangeValue={setName}
+              className="mr-5"
           />
           <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -64,7 +65,7 @@ export function ManagerDiscountEntry() {
               </DropdownMenuContent>
           </DropdownMenu>
       </div>
-      <Button onClick={addDiscount} type="button" variant="outline" className="w-full">
+      <Button onClick={addDiscount} type="button" variant="destructive" className="my-1 w-full">
             Add Discount
       </Button>
     </div>

@@ -142,16 +142,57 @@ export default function Home() {
             <Input placeholder="Out of Stock Product"
               value={eightySixToAdd}
               onChangeValue={set86} />
-            <Button onClick={add86} type="button" variant="outline" className="w-full">
+            <Button onClick={add86} type="button" variant="destructive" className="w-full">
               Add 86&apos;d Item
             </Button>
+          </div>
+          <div>
+            {/* takeout */}
           </div>
           <div>
             <Heading title={'Manager Discounts'} />
             <ManagerDiscountDisplay />
             <ManagerDiscountEntry />            
           </div>
-
+          <div>
+            {/* BOH on shift (x100, x50) */}
+          </div>
+          <div>
+            {/* FOH on shift (x50) */}
+          </div>
+          <div>
+            {/* Staff not on shift (x25) */}
+          </div>
+          <div>
+            {/* NBH (x10) */}
+          </div>
+          <div>
+            {/* Owners (x50) */}
+          </div>
+          <div>
+            {/* Training */}
+          </div>
+          <div>
+            {/* Pint / pickle */}
+          </div>
+          <div>
+            {/* Guest Satisfaction (% and reason) */}
+          </div>
+          <div>
+            {/* Promo */}
+          </div>
+          <div>
+            {/* Deletes */}
+          </div>
+          <div>
+            {/* Waste */}
+          </div>
+          <div>
+            {/* Maintenance */}
+          </div>
+          <div>
+            {/* FOH cut times */}
+          </div>
         
         </form>
       </TabsContent>
@@ -210,7 +251,7 @@ export default function Home() {
 
 
 const Heading = ({classname="", title}) => (
-  <h2 className={`${classname} pb-1 my-1`}>
+  <h2 className={`${classname} pb-1 mb-1 mt-2`}>
     {title}
   </h2>
 )
