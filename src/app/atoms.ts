@@ -11,6 +11,7 @@ const getAdjustedDate = () => {
 };
 
 export const dateAtom = atom(getAdjustedDate());
+export const shiftAtom = atom("Day")
 export const salesAtom = atom(0)
 export const foodSalesAtom = atom(0)
 export const discountsAmountAtom = atom(0)

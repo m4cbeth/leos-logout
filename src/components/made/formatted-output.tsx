@@ -10,6 +10,7 @@ import { CurrencyDisplay } from "../currency-display";
 
 export function FormattedLogout() {
     const todaysDate = useAtomValue(atoms.dateAtom)
+    const shift = useAtomValue(atoms.shiftAtom)
     const sales = useAtomValue(atoms.salesAtom)
     const foodSales = useAtomValue(atoms.foodSalesAtom)
     const takeout = useAtomValue(atoms.takeoutAtom)
@@ -25,38 +26,43 @@ export function FormattedLogout() {
           <Button variant="outline" onClick={copyToPostText} className="my-3 w-full">Copy</Button>
           <div id="output" className="border p-1 m-1 text-sm">
             DATE: {todaysDate.toDateString()}
-            <br />
-            SALES: ${sales}
-            <br />
-            FOOD SALES (excl. discounts): ${foodSales}
-            <br />
+            <DoubleBreak />
+            SHIFT: {shift} 
+            <DoubleBreak />
+            SALES: <CurrencyDisplay key={'sales'} amount={sales} />
+            <DoubleBreak />
+            FOOD SALES (excl. discounts): <CurrencyDisplay key={'foodSales'} amount={foodSales} />
+            <DoubleBreak />
             TAKEOUT SALES: <CurrencyDisplay key={'takeout'} amount={takeout} />
-            <br />
-            DISCOUNTS: ${discountsAmount}{` | `}{discountPercent}
-            <br />
-            PROMOS: ${promo}
-            <br />
-            FLOAT: ${float}
-            <br />
+            <DoubleBreak />
+            DISCOUNTS: <CurrencyDisplay key={'discountsAmount'} amount={discountsAmount} />{` | `}{discountPercent}
+            <DoubleBreak />
+            PROMOS: <CurrencyDisplay key={'promo'} amount={promo} />
+            <DoubleBreak />
+            FLOAT: <CurrencyDisplay key={'float'} amount={float} />
+            <DoubleBreak />
             FLOW:
-            <br />
+            <DoubleBreak />
             {flow}
-            <br />
+            <DoubleBreak />
             ISSUES/CONCERNS/COMMENTS:
-            <br />
+            <DoubleBreak />
             {issues}
-            <br />
-            86D
-            <br />
+            <DoubleBreak />
+            86D:
+            <DoubleBreak />
             <EightySixList />
-            <br />
+            <DoubleBreak />
             MANAGER DISCOUNTS:
-            <br />
+            <DoubleBreak />
             <ManagerDiscountDisplay />
+            <DoubleBreak />
         </div>
     </div>
     )
 }
+
+const DoubleBreak = () => <><br /><br /></>
 
 
 

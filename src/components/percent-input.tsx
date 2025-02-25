@@ -2,20 +2,16 @@ import React, { useState } from "react";
 import { Input } from "./ui/input";
 
 export default function PercentInput({jotSet, jotVal = 0}) {
-  const [rawValue, setRawValue] = useState(""); // Stores digits like "1234"
   const [displayValue, setDisplayValue] = useState(jotVal || "0.00%"); // What the user sees
 
   const handleChange = (e) => {
     const digits = e.target.value.replace(/\D/g, ""); // Keep only numbers
 
     if (!digits) {
-      setRawValue("");
       setDisplayValue("0.00%");
       return;
     }
 
-    setRawValue(digits);
-    console.log(rawValue)
     const numericValue = parseInt(digits, 10) / 10000; // Convert to decimal
     const formatted = (numericValue * 100).toFixed(2) + "%"; // Format as percentage
 

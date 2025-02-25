@@ -17,7 +17,7 @@ import { FormattedLogout } from "@/components/made/formatted-output";
 export default function Home() {
   
  
-  const [selectedTab, setSelectedTab] = useState("Day")
+  const [selectedTab, setSelectedTab] = useAtom(atoms.shiftAtom)
   const [sales, setSales] = useAtom(atoms.salesAtom)
   const [foodSales, setFoodSales] = useAtom(atoms.foodSalesAtom)
   const [discountsAmount, setDiscAmount] = useAtom(atoms.discountsAmountAtom)
