@@ -4,6 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
 import ThemeButton from "@/components/made/themebutton";
 import Image from "next/image";
+import Link from "next/link";
+import { QRCodeDialogue } from "@/components/made/qr-dialogue";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,9 +49,13 @@ export default function RootLayout({
 
 const Header = () => (
   <div className="flex">
-    <div className="flex-1"></div>
+    <div className="flex-1 p">
+      <QRCodeDialogue />
+    </div>
     <div className="flex justify-center flex-1">
-      <Image alt="Leopold's Tavern" src="/leos-logo.avif" width={120} height={12} />
+      <Link href="/">
+        <Image alt="Leopold's Tavern" src="/leos-logo.avif" width={120} height={12} />
+      </Link>
     </div>
     <div className="flex-1 flex justify-end">
       <ThemeButton/>

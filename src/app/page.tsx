@@ -6,8 +6,9 @@ import * as atoms from "@/app/atoms"
 import { useAtom } from "jotai";
 import { useState } from "react";
 import CurrencyInput from "@/components/currency-input";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import PercentInput from "@/components/percent-input";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+
 
 
 export default function Home() {
