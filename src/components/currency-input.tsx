@@ -2,13 +2,13 @@ import { useState } from "react";
 import { Input } from "./ui/input";
 
 const displayCurrency = (amount) => {
-  return amount.toLocaleString("en-US", { style: "currency", currency: "USD" })
+  return (amount).toLocaleString("en-US", { style: "currency", currency: "USD" })
 }
 
 const CurrencyInput = ({jotSet, jotVal = 0}) => {
   const [rawValue, setRawValue] = useState(""); // Stores raw numbers like "1", "12", "123"
-  const [displayValue, setDisplayValue] = useState(jotVal || "$0.00"); // Stores formatted currency
-
+  const [displayValue, setDisplayValue] = useState(displayCurrency(jotVal) || "$0.00"); // Stores formatted currency
+  console.log(displayCurrency(jotVal))
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const input = e.target.value.replace(/\D/g, ""); // Remove non-digits
     if (!input) {

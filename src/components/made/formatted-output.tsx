@@ -5,6 +5,7 @@ import { useAtomValue } from "jotai"
 import * as atoms from "@/app/atoms"
 import { ManagerDiscountDisplay } from "@/components/made/manager-discount";
 import { EightySixList } from "./eighty-six-list";
+import { CurrencyDisplay } from "../currency-display";
 
 
 export function FormattedLogout() {
@@ -29,7 +30,7 @@ export function FormattedLogout() {
             <br />
             FOOD SALES (excl. discounts): ${foodSales}
             <br />
-            TAKEOUT SALES: ${takeout}
+            TAKEOUT SALES: <CurrencyDisplay key={'takeout'} amount={takeout} />
             <br />
             DISCOUNTS: ${discountsAmount}{` | `}{discountPercent}
             <br />
