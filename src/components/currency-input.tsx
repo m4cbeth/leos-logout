@@ -21,6 +21,7 @@ const CurrencyInput = ({jotaiSetter}) => {
 
   return (
     <input
+      className="font-thin w-full"
       type="text"
       value={displayValue}
       onChange={handleChange}

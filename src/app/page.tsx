@@ -24,7 +24,8 @@ export default function Home() {
 
   return (
     <div className="items-center justify-items-center min-h-screen p-5   font-[family-name:var(--font-geist-sans)]">
-      <main className="flex justify-center border w-[500px] p-3 justify-items-center flex-col gap-8 row-start-2 sm:items-start">
+      
+      <main className="flex justify-center mx-1 border w-full p-3 justify-items-center flex-col gap-8 row-start-2 sm:items-start">
         <h1 className="text-2xl font-thin text-center">Leo&apos;s Logout</h1>
 
 
@@ -35,16 +36,16 @@ export default function Home() {
       </TabsList>
       <TabsContent value="input">
         <form className="flex flex-col">
-          <div className="flex my-2">
+          <div className="flex flex-col my-2">
             <div>
               <Heading title="Date:"/>
             </div>
-            <div className="ml-5">
+            <div>
               <DatePicker jotaiSetter={setDate}/> {/** todo: go into the date picker and make it's state refer to atom */}
               {/* Printed at time needed next as well */}
             </div>
           </div>
-          <div className="flex my-2">
+          <div className="flex flco my-2">
             <div>
               <Heading title="Shift:" />
             </div>
@@ -57,58 +58,56 @@ export default function Home() {
               </Tabs>
             </div>
           </div>
-          <div className="flex my-2 justify-between">
+          <div className="flex flex-col my-2 justify-between">
             <div>
               <Heading title="Sales:"/>
             </div>
-            <div className="ml-5">
+            <div className="">
               <CurrencyInput key="sales" jotaiSetter={setSales}/>
             </div>
           </div>
-          <EntryRow>
+          <div className="flex flex-col">
             <div>
               <h2>
                 Food Sales (excl. discounts):
               </h2>
             </div>
-            <div className="ml-5">
+            <div  className="font-thin">
               <CurrencyInput key="food" jotaiSetter={setFoodSales}/>
             </div>
-          </EntryRow>
-          <EntryRow>
+          </div>
+          <div className="">
             <Heading title="Takeout"/>
             <CurrencyInput key={'takeout'} jotaiSetter={setTakeout}/>
-          </EntryRow>
-          <EntryRow>
+          </div>
+          <div className="">
             <div>
               <Heading title="Discounts ($):"/>
             </div>
             <div>
               <CurrencyInput key="discountsdollars" jotaiSetter={setDiscAmount}/>
             </div>
-          </EntryRow>
-          <EntryRow>
+          </div>
+          <div>
             <div>
               <Heading title="Discounts (%):"/>
             </div>
             <div>
               <PercentInput key="discountspercent" jotaiSetter={setDiscPercent}/>
             </div>
-          </EntryRow>
-          <EntryRow>
+          </div>
+          <div>
             <Heading title="Promo"/>
             <CurrencyInput key={'promo'} jotaiSetter={setPromo}/>
-          </EntryRow>
+          </div>
 
           
         
         </form>
       </TabsContent>
       <TabsContent value="topost">
-        <div id="output" className="relative">
-          <Button onClick={copyToPostText} className="absolute right-0">
-            Copy
-          </Button>
+        <Button variant="outline" onClick={copyToPostText} className="my-3 w-full">Copy</Button>
+        <div id="output" className="border p-1 m-1 text-sm">
           DATE: {todaysDate.toDateString()}
           <br />
           SALES: {sales}

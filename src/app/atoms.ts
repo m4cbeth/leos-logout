@@ -19,7 +19,7 @@ export const takeoutAtom = atom(0)
 export const promoAtom = atom(0)
 
 // ===================DONE==================
-// ATE:Feb 23 night
+// DATE:Feb 23 night
 // SALES: $12861.03
 // FOOD SALES (excel discounts): $8039.21
 // TAKEOUT SALES :$1343.54
