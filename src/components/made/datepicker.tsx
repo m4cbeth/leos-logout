@@ -13,8 +13,11 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 
-export function DatePicker({jotaiSetter}) {
-  const [date, setDate] = React.useState<Date>()
+import { dateAtom } from "@/app/atoms"
+import { useAtom } from "jotai"
+
+export function DatePicker() {
+  const [date, setDate] = useAtom(dateAtom)
   const [open, setOpen] = React.useState(false)
 
   return (
@@ -37,7 +40,6 @@ export function DatePicker({jotaiSetter}) {
           selected={date}
           onSelect={(selectedDate) => {
             setDate(selectedDate)
-            jotaiSetter(selectedDate)
             setOpen(false) // Close the popover after selection
           }}
           initialFocus

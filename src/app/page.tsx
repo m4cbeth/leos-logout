@@ -5,18 +5,17 @@ import { useAtom } from "jotai";
 import * as atoms from "@/app/atoms"
 import { DatePicker } from "@/components/made/datepicker";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import CurrencyInput from "@/components/currency-input";
 import PercentInput from "@/components/percent-input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Textarea } from "@/components/ui/textarea"
-import { OnehundredOrFiftyDropdown } from "@/components/made/100-50-dropdown";
-
+import { ManagerDiscountEntry } from "@/components/made/manager-discount";
+import { Input } from "@/components/ui/input";
 
 
 export default function Home() {
   
-  // todo date jotai
+ 
   const [todaysDate, setDate] =useAtom(atoms.dateAtom)
   const [selectedTab, setSelectedTab] = useState("Day")
   const [sales, setSales] = useAtom(atoms.salesAtom)
@@ -28,9 +27,25 @@ export default function Home() {
   const [float, setFloat] = useAtom(atoms.floatAtom)
   const [flow, setFlow] = useAtom(atoms.flowAtom)
   const [issues, setIssues] = useAtom(atoms.issuesAtom)
-  const [managerDisc, setMangDisc] = useState("")
+  const [eightySixToAdd, set86] = useState("")
+  const [eightySixItems, set86Items] = useAtom(atoms.eightySixAtom)
+  const [managerDiscToAdd, setMangDisc] = useState("")
 
-
+  const add86 = () => {
+    const new86Items = [...eightySixItems]
+    new86Items.push(eightySixToAdd)
+    set86Items(new86Items)
+    set86("")
+  }
+  const EightSixList = () => (
+    eightySixItems.length > 0 && (
+      <ul>
+        {eightySixItems.map((item) => (
+          <li key={item}>- {item}</li>
+        ))}
+      </ul>
+    )
+  )
 
 
 
@@ -53,7 +68,7 @@ export default function Home() {
               <Heading title="Date:"/>
             </div>
             <div>
-              <DatePicker jotaiSetter={setDate}/> {/** todo: go into the date picker and make it's state refer to atom */}
+              <DatePicker/> {/** todo: go into the date picker and make it's state refer to atom */}
               {/* Printed at time needed next as well */}
             </div>
           </div>
@@ -123,12 +138,21 @@ export default function Home() {
             <Textarea value={flow} onChangeValue={setIssues} placeholder="Describe how the service went." />
           </div>
           <div>
-            <Heading title="86'd" />
-            
+            <Heading title="86'd Bar Products" />
+            <EightSixList />
+            <Input placeholder="Out of Stock Product"
+              value={eightySixToAdd}
+              onChangeValue={set86} />
+            <Button onClick={add86} type="button" variant="outline" className="w-full">
+              Add 86&apos;d Item
+            </Button>
           </div>
           <div>
-            <Heading title={'DISCOUNTS'} />
-            
+            <Heading title={'Manager Discounts'} />
+            <ManagerDiscountEntry setter={setMangDisc} />
+            <Button type="button" variant="outline" className="w-full">
+              Add Discount
+            </Button>
           </div>
 
         
@@ -148,16 +172,24 @@ export default function Home() {
           <br />
           TAKEOUT SALES: ${takeout}
           <br />
-          DISCOUNTS: ${discountsAmount}{`    |    `}{discountPercent}
+          DISCOUNTS: ${discountsAmount}{` | `}{discountPercent}
           <br />
           PROMOS: ${promo}
           <br />
           FLOAT: ${float}
           <br />
-          FLOW: <br />
+          FLOW:
+          <br />
           {flow}
           <br />
-          ISSUES/CONCERNS/COMMENTS: {issues}
+          ISSUES/CONCERNS/COMMENTS:
+          <br />
+          {issues}
+          <br />
+          86D
+          <br />
+          <EightSixList />
+          
 
 
 
@@ -175,8 +207,9 @@ export default function Home() {
 
 
 
+
 const Heading = ({classname="", title}) => (
-  <h2 className={`${classname} pb-1`}>
+  <h2 className={`${classname} pb-1 my-1`}>
     {title}
   </h2>
 )
