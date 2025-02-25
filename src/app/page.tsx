@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <div className="items-center justify-items-center min-h-screen p-5   font-[family-name:var(--font-geist-sans)]">
       <main className="flex justify-center border w-[500px] p-3 justify-items-center flex-col gap-8 row-start-2 sm:items-start">
-        <h1 className="text-2xl font-thin text-center">Leo's Logout</h1>
+        <h1 className="text-2xl font-thin text-center">Leo&apos;s Logout</h1>
 
 
     <Tabs defaultValue="input" className="w-full">
