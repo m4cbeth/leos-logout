@@ -18,7 +18,6 @@ export function FormattedLogout() {
     const float = useAtomValue(atoms.floatAtom)
     const flow = useAtomValue(atoms.flowAtom)
     const issues = useAtomValue(atoms.issuesAtom)
-    const eightySixItems = useAtomValue(atoms.eightySixAtom)
 
     return (
         <div className="formatted-output-block">
