@@ -20,29 +20,19 @@ export const promoAtom = atom(0)
 export const floatAtom = atom(0)
 export const flowAtom = atom("")
 export const issuesAtom = atom("")
+export const eightySixAtom = atom([])
 export const managerDiscounts = atom([])
 
-
-// ===================DONE==================
-// DATE:Feb 23 night
-// SALES: $12861.03
-// FOOD SALES (excel discounts): $8039.21
-// TAKEOUT SALES :$1343.54
-// DISCOUNT TOTAL:$412.68 3.26%
-// PROMO TOTAL: x10 = $53.50
-// FLOAT: $350
-// FLOW
-
-// ▪︎
-// ISSUES/CONCERNS/COMMENTS
-
-// ▪︎
-// ===================TODO==================
+// ================WORKING================
 
 
 // 86D
 
 // ▪︎
+
+// ===================TODO==================
+
+
 
 // TAKE OUT FLOW/DOWNTIMES/PAUSES/COMMENTS
 
@@ -73,3 +63,19 @@ export const managerDiscounts = atom([])
 
 // ▪︎
 //
+
+
+// ===================DONE==================
+// DATE:Feb 23 night
+// SALES: $12861.03
+// FOOD SALES (excel discounts): $8039.21
+// TAKEOUT SALES :$1343.54
+// DISCOUNT TOTAL:$412.68 3.26%
+// PROMO TOTAL: x10 = $53.50
+// FLOAT: $350
+// FLOW
+
+// ▪︎
+// ISSUES/CONCERNS/COMMENTS
+
+// ▪︎

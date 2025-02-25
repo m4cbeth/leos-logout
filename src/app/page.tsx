@@ -80,9 +80,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col">
             <div>
-              <h2>
-                Food Sales (excl. discounts):
-              </h2>
+              <Heading title="Food Sales (excl. discounts):" />
             </div>
             <div  className="font-thin">
               <CurrencyInput key="food" jotaiSetter={setFoodSales}/>
@@ -109,7 +107,7 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <Heading title="Promo"/>
+            <Heading title="Promos"/>
             <CurrencyInput key={'promo'} jotaiSetter={setPromo}/>
           </div>
           <div>
@@ -125,6 +123,10 @@ export default function Home() {
             <Textarea value={flow} onChangeValue={setIssues} placeholder="Describe how the service went." />
           </div>
           <div>
+            <Heading title="86'd" />
+            
+          </div>
+          <div>
             <Heading title={'DISCOUNTS'} />
             
           </div>
@@ -132,6 +134,8 @@ export default function Home() {
         
         </form>
       </TabsContent>
+
+      {/* ----------------------------------------------- */}
 
       <TabsContent value="topost">
         <Button variant="outline" onClick={copyToPostText} className="my-3 w-full">Copy</Button>
@@ -172,14 +176,9 @@ export default function Home() {
 
 
 const Heading = ({classname="", title}) => (
-  <h2 className={classname}>
+  <h2 className={`${classname} pb-1`}>
     {title}
   </h2>
-)
-const EntryRow = ({children}) => (
-  <div className="flex my-2 justify-between">
-    {children}
-  </div>
 )
 
 const copyToPostText = () => {
