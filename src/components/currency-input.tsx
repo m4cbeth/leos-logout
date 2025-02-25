@@ -13,7 +13,7 @@ const CurrencyInput = ({jotaiSetter}) => {
     }
 
     setRawValue(input); // Store the raw number
-
+    console.log(rawValue)
     const cents = parseInt(input, 10) / 100; // Convert to cents
     setDisplayValue(cents.toLocaleString("en-US", { style: "currency", currency: "USD" }));
     jotaiSetter(Number(input)/100)

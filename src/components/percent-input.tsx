@@ -14,7 +14,7 @@ export default function PercentInput({jotaiSetter}) {
     }
 
     setRawValue(digits);
-
+    console.log(rawValue)
     const numericValue = parseInt(digits, 10) / 10000; // Convert to decimal
     const formatted = (numericValue * 100).toFixed(2) + "%"; // Format as percentage
 

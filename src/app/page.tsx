@@ -2,13 +2,10 @@
 
 import { DatePicker } from "@/components/made/datepicker";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import * as atoms from "@/app/atoms"
 import { useAtom } from "jotai";
 import { useState } from "react";
-// import CurrencyFormat from 'react-currency-format';
 import CurrencyInput from "@/components/currency-input";
-// import CurrencyInput from 'react-currency-input-field';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import PercentInput from "@/components/percent-input";
 
@@ -43,7 +40,7 @@ export default function Home() {
               <Heading title="Date:"/>
             </div>
             <div className="ml-5">
-              <DatePicker/> {/** todo: go into the date picker and make it's state refer to atom */}
+              <DatePicker jotaiSetter={setDate}/> {/** todo: go into the date picker and make it's state refer to atom */}
               {/* Printed at time needed next as well */}
             </div>
           </div>
@@ -122,6 +119,7 @@ export default function Home() {
           <br />
           Discounts: ${discountsAmount}{`    |    `}{discountPercent}
           <br />
+          Promos: ${promo}
         </div>
       </TabsContent>
     </Tabs>
