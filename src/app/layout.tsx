@@ -49,8 +49,10 @@ export default function RootLayout({
 
 const Header = () => (
   <div className="flex">
-    <div className="flex-1 p">
-      <QRCodeDialogue />
+    <div className="flex-1 flex items-center p">
+      <div className="ml-3">
+        <QRCodeDialogue />
+      </div>
     </div>
     <div className="flex justify-center flex-1">
       <Link href="/">
