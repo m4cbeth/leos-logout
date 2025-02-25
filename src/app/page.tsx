@@ -11,7 +11,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Textarea } from "@/components/ui/textarea"
 import { ManagerDiscountDisplay, ManagerDiscountEntry } from "@/components/made/manager-discount";
 import { Input } from "@/components/ui/input";
-
+import { EightySixList } from "@/components/made/eighty-six-list";
 
 export default function Home() {
   
@@ -36,15 +36,7 @@ export default function Home() {
     set86Items(new86Items)
     set86("")
   }
-  const EightSixList = () => (
-    eightySixItems.length > 0 && (
-      <ul>
-        {eightySixItems.map((item) => (
-          <li key={item}>- {item}</li>
-        ))}
-      </ul>
-    )
-  )
+
 
 
 
@@ -138,7 +130,7 @@ export default function Home() {
           </div>
           <div>
             <Heading title="86'd Bar Products" />
-            <EightSixList />
+            <EightySixList />
             <Input placeholder="Out of Stock Product"
               value={eightySixToAdd}
               onChangeValue={set86} />
@@ -200,37 +192,39 @@ export default function Home() {
       {/* ----------------------------------------------- */}
 
       <TabsContent value="topost">
-        <Button variant="outline" onClick={copyToPostText} className="my-3 w-full">Copy</Button>
-        <div id="output" className="border p-1 m-1 text-sm">
-          DATE: {todaysDate.toDateString()}
-          <br />
-          SALES: ${sales}
-          <br />
-          FOOD SALES (excl. discounts): ${foodSales}
-          <br />
-          TAKEOUT SALES: ${takeout}
-          <br />
-          DISCOUNTS: ${discountsAmount}{` | `}{discountPercent}
-          <br />
-          PROMOS: ${promo}
-          <br />
-          FLOAT: ${float}
-          <br />
-          FLOW:
-          <br />
-          {flow}
-          <br />
-          ISSUES/CONCERNS/COMMENTS:
-          <br />
-          {issues}
-          <br />
-          86D
-          <br />
-          <EightSixList />
-          <br />
-          MANAGER DISCOUNTS:
-          <br />
-          <ManagerDiscountDisplay />
+        <div className="formatted-output-block">
+          <Button variant="outline" className="my-3 w-full">Copy</Button>
+          <div id="output" className="border p-1 m-1 text-sm">
+            DATE: {todaysDate.toDateString()}
+            <br />
+            SALES: ${sales}
+            <br />
+            FOOD SALES (excl. discounts): ${foodSales}
+            <br />
+            TAKEOUT SALES: ${takeout}
+            <br />
+            DISCOUNTS: ${discountsAmount}{` | `}{discountPercent}
+            <br />
+            PROMOS: ${promo}
+            <br />
+            FLOAT: ${float}
+            <br />
+            FLOW:
+            <br />
+            {flow}
+            <br />
+            ISSUES/CONCERNS/COMMENTS:
+            <br />
+            {issues}
+            <br />
+            86D
+            <br />
+            <EightySixList />
+            <br />
+            MANAGER DISCOUNTS:
+            <br />
+            <ManagerDiscountDisplay />
+        </div>
           
 
 
@@ -256,10 +250,3 @@ const Heading = ({classname="", title}) => (
   </h2>
 )
 
-const copyToPostText = () => {
-  const div = document.getElementById("output")
-  if (div) {
-    navigator.clipboard.writeText(div.innerText)
-  }
-  alert("Copied! Now go post and have a great night!")
-}
