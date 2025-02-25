@@ -21,7 +21,7 @@ const CurrencyInput = ({jotaiSetter}) => {
   };
 
   return (
-    <input
+    <Input
       className="font-thin w-full"
       type="text"
       value={displayValue}

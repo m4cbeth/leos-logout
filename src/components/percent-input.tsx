@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Input } from "./ui/input";
 
 export default function PercentInput({jotaiSetter}) {
   const [rawValue, setRawValue] = useState(""); // Stores digits like "1234"
@@ -23,8 +24,8 @@ export default function PercentInput({jotaiSetter}) {
   };
 
   return (
-    <input
-    className="font-thin w-full"
+    <Input
+      className="font-thin w-full"
       type="text"
       value={displayValue}
       onChange={handleChange}
