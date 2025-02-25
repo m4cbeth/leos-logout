@@ -1,14 +1,16 @@
 "use client"
 
+import { useState } from "react";
+import { useAtom } from "jotai";
+import * as atoms from "@/app/atoms"
 import { DatePicker } from "@/components/made/datepicker";
 import { Button } from "@/components/ui/button";
-import * as atoms from "@/app/atoms"
-import { useAtom } from "jotai";
-import { useState } from "react";
+import { Input } from "@/components/ui/input";
 import CurrencyInput from "@/components/currency-input";
 import PercentInput from "@/components/percent-input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Textarea } from "@/components/ui/textarea"
+import { OnehundredOrFiftyDropdown } from "@/components/made/100-50-dropdown";
 
 
 
@@ -25,6 +27,12 @@ export default function Home() {
   const [promo, setPromo] = useAtom(atoms.promoAtom)
   const [float, setFloat] = useAtom(atoms.floatAtom)
   const [flow, setFlow] = useAtom(atoms.flowAtom)
+  const [issues, setIssues] = useAtom(atoms.issuesAtom)
+  const [managerDisc, setMangDisc] = useState("")
+
+
+
+
 
   return (
     <div className="items-center justify-items-center min-h-screen p-5  max-w-lg mx-auto font-[family-name:var(--font-geist-sans)]">
@@ -110,32 +118,62 @@ export default function Home() {
           </div>
           <div>
             <Heading title={'Flow'} />
-            Jotai atom = {flow}
             <Textarea value={flow} onChangeValue={setFlow} placeholder="Describe how the service went." />
+          </div>
+          <div>
+            <Heading title={'Issues/Concerns/Comments'} />
+            <Textarea value={flow} onChangeValue={setIssues} placeholder="Describe how the service went." />
+          </div>
+          <div>
+            <Heading title={'DISCOUNTS'} />
+            <div className="flex">
+              <Input placeholder="Manager's Name"
+              value={managerDisc}
+              onChangeValue={setMangDisc}
+              />
+              <OnehundredOrFiftyDropdown/>
+            </div>
           </div>
 
         
         </form>
       </TabsContent>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
       <TabsContent value="topost">
         <Button variant="outline" onClick={copyToPostText} className="my-3 w-full">Copy</Button>
         <div id="output" className="border p-1 m-1 text-sm">
           DATE: {todaysDate.toDateString()}
           <br />
-          SALES: {sales}
+          SALES: ${sales}
           <br />
-          FOOD SALES (excl. discounts): {foodSales}
+          FOOD SALES (excl. discounts): ${foodSales}
           <br />
-          TAKEOUT SALES: {takeout}
+          TAKEOUT SALES: ${takeout}
           <br />
-          Discounts: ${discountsAmount}{`    |    `}{discountPercent}
+          DISCOUNTS: ${discountsAmount}{`    |    `}{discountPercent}
           <br />
-          Promos: ${promo}
+          PROMOS: ${promo}
           <br />
-          Float: ${float}
+          FLOAT: ${float}
           <br />
-          Flow: <br />
+          FLOW: <br />
           {flow}
+          <br />
+          ISSUES/CONCERNS/COMMENTS: {issues}
 
 
 
@@ -153,8 +191,8 @@ export default function Home() {
 
 
 
-const Heading = ({title}) => (
-  <h2>
+const Heading = ({classname="", title}) => (
+  <h2 className={classname}>
     {title}
   </h2>
 )

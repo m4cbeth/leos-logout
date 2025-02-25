@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Input } from "./ui/input";
 
 const CurrencyInput = ({jotaiSetter}) => {
   const [rawValue, setRawValue] = useState(""); // Stores raw numbers like "1", "12", "123"
