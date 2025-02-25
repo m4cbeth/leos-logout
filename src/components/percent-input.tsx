@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Input } from "./ui/input";
 
 export default function PercentInput({jotSet, jotVal = 0}) {
-  const [displayValue, setDisplayValue] = useState(jotVal || "0.00%"); // What the user sees
+  const [displayValue, setDisplayValue] = useState(`${(jotVal*100).toFixed(2)}%` || "0.00%"); // What the user sees
 
   const handleChange = (e) => {
     const digits = e.target.value.replace(/\D/g, ""); // Keep only numbers
@@ -16,7 +16,7 @@ export default function PercentInput({jotSet, jotVal = 0}) {
     const formatted = (numericValue * 100).toFixed(2) + "%"; // Format as percentage
 
     setDisplayValue(formatted)
-    jotSet(formatted)
+    jotSet(numericValue)
   };
 
   return (

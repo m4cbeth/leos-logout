@@ -25,7 +25,7 @@ export function FormattedLogout() {
         <div className="formatted-output-block">
           <Button variant="outline" onClick={copyToPostText} className="my-3 w-full">Copy</Button>
           <div id="output" className="border p-1 m-1 text-sm">
-            DATE: {todaysDate.toDateString()}
+            DATE: {todaysDate?.toDateString()}
             <DoubleBreak />
             SHIFT: {shift} 
             <DoubleBreak />
@@ -35,7 +35,9 @@ export function FormattedLogout() {
             <DoubleBreak />
             TAKEOUT SALES: <CurrencyDisplay key={'takeout'} amount={takeout} />
             <DoubleBreak />
-            DISCOUNTS: <CurrencyDisplay key={'discountsAmount'} amount={discountsAmount} />{` | `}{discountPercent}
+            DISCOUNTS: <CurrencyDisplay key={'discountsAmount'} amount={discountsAmount} />
+            {` | `}
+            {(discountPercent*100).toFixed(2)}%
             <DoubleBreak />
             PROMOS: <CurrencyDisplay key={'promo'} amount={promo} />
             <DoubleBreak />
