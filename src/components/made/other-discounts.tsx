@@ -4,22 +4,12 @@ import { useState } from "react";
 import { Heading } from "@/components/helpers";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button"
-import { useAtom, Atom } from "jotai";
+import { useAtom } from "jotai";
 import { WritableAtom } from "jotai/vanilla";
 import * as atoms from "@/app/atoms";
 
 
 export default function OtherDiscounts(){
-    const [FOHonShift, setFOHonShift] = useAtom(atoms.FOHonShiftAtom);
-    const [staffOffShift, setStaffOffShift] = useAtom(atoms.staffOffShiftAtom);
-    const [NBH, setNBH] = useAtom(atoms.NBHAtom);
-    const [owners, setOwners] = useAtom(atoms.ownersAtom);
-    const [trainingDiscounts, setTrainingDiscounts] = useAtom(atoms.trainingDiscountsAtom);
-    const [pintCards, setPintCards] = useAtom(atoms.pintCardAtom);
-    const [pickleCards, setPickleCards] =useAtom(atoms.pickleCardAtom)
-    const [teamNachos, setNachos] = useAtom(atoms.teamNachoAtom)
-    const [guestSatisfaction, setGuestSatisfaction] = useAtom(atoms.guestSatisfactionAtom);
-
     return(
         <>
             <Entry
