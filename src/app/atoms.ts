@@ -23,6 +23,7 @@ export const flowAtom = atom("")
 export const issuesAtom = atom("")
 export const eightySixAtom = atom([])
 export const managerDiscountsAtom = atom([])
+export const BOHDiscountAtom = atom([])
 
 // ================WORKING================
 
