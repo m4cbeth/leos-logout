@@ -20,87 +20,106 @@ export function FormattedLogout() {
     const float = useAtomValue(atoms.floatAtom)
     const flow = useAtomValue(atoms.flowAtom)
     const issues = useAtomValue(atoms.issuesAtom)
+    const eightySix = useAtomValue(atoms.eightySixAtom)
+    const managerDiscounts = useAtomValue(atoms.managerDiscountsAtom)
+    const BOHDiscount = useAtomValue(atoms.BOHDiscountAtom)
+    const FOHonShift = useAtomValue(atoms.FOHonShiftAtom)
+    const staffOffShift = useAtomValue(atoms.staffOffShiftAtom)
+    const NBH = useAtomValue(atoms.NBHAtom)
+    const owners = useAtomValue(atoms.ownersAtom)
+    const trainingDiscounts = useAtomValue(atoms.trainingDiscountsAtom)
+    const pintCard = useAtomValue(atoms.pintCardAtom)
+    const pickleCard = useAtomValue(atoms.pickleCardAtom)
+    const teamNacho = useAtomValue(atoms.teamNachoAtom)
+    const guestSatisfaction = useAtomValue(atoms.guestSatisfactionAtom)
 
     return (
         <div className="formatted-output-block">
           <Button variant="outline" onClick={copyToPostText} className="my-3 w-full">Copy</Button>
           <div id="output" className=" p-1 m-1 text-sm">
-            DATE {todaysDate?.toDateString()}
+           
+            DATE: {todaysDate?.toDateString()}
             <DoubleBreak />
-            SHIFT {shift} 
+            
+            SHIFT: {shift} 
             <DoubleBreak />
-            SALES <CurrencyDisplay key={'sales'} amount={sales} />
+            
+            SALES: <CurrencyDisplay key={'sales'} amount={sales} />
             <DoubleBreak />
+            
             FOOD SALES (excl. discounts): <CurrencyDisplay key={'foodSales'} amount={foodSales} />
             <DoubleBreak />
-            TAKEOUT SALES <CurrencyDisplay key={'takeout'} amount={takeout} />
+            
+            TAKEOUT SALES: <CurrencyDisplay key={'takeout'} amount={takeout} />
             <DoubleBreak />
-            DISCOUNTS <CurrencyDisplay key={'discountsAmount'} amount={discountsAmount} />
+            
+            DISCOUNT TOTAL: <CurrencyDisplay key={'discountsAmount'} amount={discountsAmount} />
             {` | `}
             {(discountPercent*100).toFixed(2)}%
             <DoubleBreak />
-            PROMOS <CurrencyDisplay key={'promo'} amount={promo} />
+            
+            PROMO TOTAL: <CurrencyDisplay key={'promo'} amount={promo} />
             <DoubleBreak />
-            FLOAT <CurrencyDisplay key={'float'} amount={float} />
+            
+            FLOAT: <CurrencyDisplay key={'float'} amount={float} />
             <DoubleBreak />
-            FLOW
+            
+            FLOW:
             <DoubleBreak />
-            {flow}
+            ▪︎ {flow}
             <DoubleBreak />            
-            ISSUES/CONCERNS/COMMENTS
+            
+            ISSUES/CONCERNS/COMMENTS:
             <DoubleBreak />
-            {issues}
+            ▪︎ {issues}
             <DoubleBreak />
-            86D
+            
+            86D:
             <EightySixList />
             <DoubleBreak />
-            <ManagerDiscountDisplay />
+
+            TAKE OUT FLOW/DOWNTIMES/PAUSES/COMMENTS:
             <DoubleBreak />
-            <h2>DISCOUNTS</h2>
+            ▪︎ 
+
+            {/* <ManagerDiscountDisplay />
+            <DoubleBreak /> */}
+
+            <h2 className="mt-5">DISCOUNTS</h2>
             <ul className="list-disc ml-10">
                 <li>Manager on shift (x100, x50)
                     <ListCircles>
-                        <li></li>
+                        <Listify jotVal={managerDiscounts} />
                     </ListCircles>
                 </li>
                 <li>BOH on shift (x100, x50)
                     <ListCircles>
-                        <li></li>
+                        <Listify jotVal={BOHDiscount} />
                     </ListCircles>
                 </li>
                 <li>FOH on shift (x50)
                     <ListCircles>
-                        <li></li>
+                        <Listify jotVal={FOHonShift} />
                     </ListCircles>
                 </li>
                 <li>Staff not on shift (x25)
                     <ListCircles>
-                        <li></li>
+                        <Listify jotVal={staffOffShift} />
                     </ListCircles>
                 </li>
                 <li>NBH (x10)
                     <ListCircles>
-                        <li></li>
+                        <Listify jotVal={NBH} />
                     </ListCircles>
                 </li>
                 <li>Owners (x50)
                     <ListCircles>
-                        <li></li>
+                        <Listify jotVal={owners} />
                     </ListCircles>
                 </li>
                 <li>Training Discount (x100)
                     <ListCircles>
-                        <li>c</li>
-                    </ListCircles>
-                </li>
-                <li>Pint/Pickle cards/ Team nachos (amount of cards/orders)
-                    <ListCircles>
-                        <li>c</li>
-                    </ListCircles>
-                </li>
-                <li>Guest Satisfaction (% and reason)
-                    <ListCircles>
-                        <li> c</li>
+                        <Listify jotVal={trainingDiscounts} />
                     </ListCircles>
                 </li>
             </ul>
