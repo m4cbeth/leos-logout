@@ -4,8 +4,7 @@ import { useState } from "react";
 import { Heading } from "@/components/helpers";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button"
-import { useAtom } from "jotai";
-import { WritableAtom } from "jotai/vanilla";
+import { useAtom, WritableAtom  } from "jotai";
 import * as atoms from "@/app/atoms";
 
 
@@ -22,14 +21,21 @@ export default function OtherDiscounts(){
     )
 }
 
-function Entry({ atom, title, placeholder }: { atom: WritableAtom<any[], any[], void>; title: string; placeholder: string }) {
+function Entry<T extends string[]>({ 
+    atom, 
+    title, 
+    placeholder 
+  }: { 
+    atom: WritableAtom<T, [T], void>;
+    title: string; 
+    placeholder: string 
+  }) {
     const [jotVal, jotSet] = useAtom(atom);
     const [entry, setEntry] = useState("");
 
     const addDiscount = () => {
         if (!entry) return
-        const newState = [...jotVal]
-        newState.push(entry)
+        const newState = (Array.isArray(jotVal) ? [...jotVal, entry] : [entry]) as T;
         jotSet(newState)
         setEntry("")
     }
@@ -37,8 +43,8 @@ function Entry({ atom, title, placeholder }: { atom: WritableAtom<any[], any[], 
     const DiscountsDisplay = () => (
         jotVal.length > 0 && (
             <ul className="font-thin">
-                {jotVal.map((discount) => (
-                    <li key={discount}>- {discount}</li>
+                {jotVal.map((item) => (
+                    <li key={item}>- {item}</li>
                 ))}
             </ul>
         )
