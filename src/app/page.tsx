@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <div className="items-center justify-items-center min-h-screen p-5  max-w-lg mx-auto font-[family-name:var(--font-geist-sans)]">
       
-      <main className="flex justify-center mx-1 border w-full p-3 justify-items-center flex-col gap-8 row-start-2 sm:items-start">
+      <main className="flex justify-center mb-36 mt-1 border w-full p-3 justify-items-center flex-col gap-8 row-start-2 sm:items-start">
         <h1 className="text-2xl font-thin text-center">Leo&apos;s Logout</h1>
 
 

@@ -24,41 +24,86 @@ export function FormattedLogout() {
     return (
         <div className="formatted-output-block">
           <Button variant="outline" onClick={copyToPostText} className="my-3 w-full">Copy</Button>
-          <div id="output" className="border p-1 m-1 text-sm">
-            DATE: {todaysDate?.toDateString()}
+          <div id="output" className=" p-1 m-1 text-sm">
+            DATE {todaysDate?.toDateString()}
             <DoubleBreak />
-            SHIFT: {shift} 
+            SHIFT {shift} 
             <DoubleBreak />
-            SALES: <CurrencyDisplay key={'sales'} amount={sales} />
+            SALES <CurrencyDisplay key={'sales'} amount={sales} />
             <DoubleBreak />
             FOOD SALES (excl. discounts): <CurrencyDisplay key={'foodSales'} amount={foodSales} />
             <DoubleBreak />
-            TAKEOUT SALES: <CurrencyDisplay key={'takeout'} amount={takeout} />
+            TAKEOUT SALES <CurrencyDisplay key={'takeout'} amount={takeout} />
             <DoubleBreak />
-            DISCOUNTS: <CurrencyDisplay key={'discountsAmount'} amount={discountsAmount} />
+            DISCOUNTS <CurrencyDisplay key={'discountsAmount'} amount={discountsAmount} />
             {` | `}
             {(discountPercent*100).toFixed(2)}%
             <DoubleBreak />
-            PROMOS: <CurrencyDisplay key={'promo'} amount={promo} />
+            PROMOS <CurrencyDisplay key={'promo'} amount={promo} />
             <DoubleBreak />
-            FLOAT: <CurrencyDisplay key={'float'} amount={float} />
+            FLOAT <CurrencyDisplay key={'float'} amount={float} />
             <DoubleBreak />
-            FLOW:
+            FLOW
             <DoubleBreak />
             {flow}
-            <DoubleBreak />
-            ISSUES/CONCERNS/COMMENTS:
+            <DoubleBreak />            
+            ISSUES/CONCERNS/COMMENTS
             <DoubleBreak />
             {issues}
             <DoubleBreak />
-            86D:
-            <DoubleBreak />
+            86D
             <EightySixList />
-            <DoubleBreak />
-            MANAGER DISCOUNTS:
             <DoubleBreak />
             <ManagerDiscountDisplay />
             <DoubleBreak />
+            <h2>DISCOUNTS</h2>
+            <ul className="list-disc ml-10">
+                <li>Manager on shift (x100, x50)
+                    <ul className="list-[circle] ml-10">
+                        <li></li>
+                    </ul>
+                </li>
+                <li>BOH on shift (x100, x50)
+                    <ul className="list-[circle] ml-10">
+                        <li></li>
+                    </ul>
+                </li>
+                <li>FOH on shift (x50)
+                    <ul className="list-[circle] ml-10">
+                        <li></li>
+                    </ul>
+                </li>
+                <li>Staff not on shift (x25)
+                    <ul className="list-[circle] ml-10">
+                        <li></li>
+                    </ul>
+                </li>
+                <li>NBH (x10)
+                    <ul className="list-[circle] ml-10">
+                        <li></li>
+                    </ul>
+                </li>
+                <li>Owners (x50)
+                    <ul className="list-[circle] ml-10">
+                        <li></li>
+                    </ul>
+                </li>
+                <li>Training Discount (x100)
+                    <ul className="list-[circle] ml-10">
+                        <li>c</li>
+                    </ul>
+                </li>
+                <li>Pint/Pickle cards/ Team nachos (amount of cards/orders)
+                    <ul className="list-[circle] ml-10">
+                        <li>c</li>
+                    </ul>
+                </li>
+                <li>Guest Satisfaction (% and reason)
+                    <ul className="list-[circle] ml-10">
+                        <li> c</li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
     )
