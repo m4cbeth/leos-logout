@@ -15,6 +15,7 @@ import { EightySixList } from "@/components/made/eighty-six-list";
 import { FormattedLogout } from "@/components/made/formatted-output";
 import { BOHDiscountDisplay, BOHDiscountEntry } from "@/components/made/BOH-discount";
 import { Heading } from "@/components/helpers";
+import OtherDiscounts from "@/components/made/other-discounts";
 
 
 
@@ -156,8 +157,7 @@ export default function Home() {
             <BOHDiscountEntry />
           </div>
           <div>
-            {/* <Heading title={'FOH shift meals (50%)'} /> */}
-
+            <OtherDiscounts />            
           </div>
           <div>
             {/* Staff not on shift (x25) */}
