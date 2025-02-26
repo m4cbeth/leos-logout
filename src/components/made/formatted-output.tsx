@@ -152,6 +152,6 @@ const copyToPostText = () => {
     if (div) {
       navigator.clipboard.writeText(div.innerText)
     }
-    alert("Copied! Now go post and have a great night!")
+    // alert("Copied! Now go post and have a great night!")
   }
   
