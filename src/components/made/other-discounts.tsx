@@ -12,9 +12,29 @@ export default function OtherDiscounts(){
     return(
         <>
             <Entry
-                title={"FOH on Shift"}
+                title={"FOH on Shift (50%)"}
                 atom={atoms.FOHonShiftAtom}
                 placeholder={"Employee's Name"}
+            />
+            <Entry
+                title={"Staff off Shift (25%)"}
+                atom={atoms.staffOffShiftAtom}
+                placeholder={"Employee's Name"}
+            />
+            <Entry
+                title={"NBH (10%)"}
+                atom={atoms.NBHAtom}
+                placeholder={"Local's name"}
+            />
+            <Entry
+                title={"Owner's (50%)"}
+                atom={atoms.ownersAtom}
+                placeholder={"Owner's Name"}
+            />
+            <Entry
+                title={"Training (100%)"}
+                atom={atoms.trainingDiscountsAtom}
+                placeholder={"Dish / Drink"}
             />
             
         </>
