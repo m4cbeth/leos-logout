@@ -138,7 +138,7 @@ export default function Home() {
             <Input placeholder="Out of Stock Product"
               value={eightySixToAdd}
               onChangeValue={set86} />
-            <Button onClick={add86} type="button" variant="destructive" className="w-full">
+            <Button onClick={add86} type="button" variant="secondary" className="w-full">
               Add 86&apos;d Item
             </Button>
           </div>
@@ -156,7 +156,7 @@ export default function Home() {
             <BOHDiscountEntry />
           </div>
           <div>
-            <Heading title={'FOH shift meals (50%)'} />
+            {/* <Heading title={'FOH shift meals (50%)'} /> */}
 
           </div>
           <div>
@@ -192,17 +192,19 @@ export default function Home() {
           <div>
             {/* FOH cut times */}
           </div>
-        
         </form>
       </TabsContent>
+        
+
+        
 
       {/* ----------------------------------------------- */}
 
       <TabsContent value="topost">
+
+
         <FormattedLogout/>
                   
-
-
 
       </TabsContent>
     </Tabs>

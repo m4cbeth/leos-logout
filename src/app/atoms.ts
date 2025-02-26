@@ -24,6 +24,13 @@ export const issuesAtom = atom("")
 export const eightySixAtom = atom([])
 export const managerDiscountsAtom = atom([])
 export const BOHDiscountAtom = atom([])
+export const FOHonShift = atom([])
+export const StaffOffShift = atom([])
+export const NBH = atom([])
+export const Owners = atom([])
+export const TrainingDiscounts = atom([])
+export const PintPickleNachoAtom = atom([])
+export const GuestSatisfactionAtom = atom([])
 
 // ================WORKING================
 

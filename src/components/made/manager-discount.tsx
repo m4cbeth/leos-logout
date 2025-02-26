@@ -65,7 +65,12 @@ export function ManagerDiscountEntry() {
               </DropdownMenuContent>
           </DropdownMenu>
       </div>
-      <Button onClick={addDiscount} type="button" variant="destructive" className="my-1 w-full">
+      <Button 
+        onClick={addDiscount}
+        type="button"
+        variant="secondary"
+        className="my-1 w-full"
+      >
             Add Discount
       </Button>
     </div>
