@@ -45,7 +45,7 @@ export function BOHDiscountEntry() {
 
   return (
     <div>
-      <div className="flex items-center">
+      <div className="flex gap-3 items-center">
           <Input placeholder="Employee's Name"
               value={employeeName}
               onChangeValue={setName}

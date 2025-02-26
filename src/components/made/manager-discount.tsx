@@ -45,7 +45,7 @@ export function ManagerDiscountEntry() {
 
   return (
     <div>
-      <div className="flex items-center">
+      <div className="flex gap-3 items-center">
           <Input placeholder="Manager's Name"
               value={managerName}
               onChangeValue={setName}

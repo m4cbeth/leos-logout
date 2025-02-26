@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { useAtomValue } from "jotai"
 import * as atoms from "@/app/atoms"
-import { ManagerDiscountDisplay } from "@/components/made/manager-discount";
+// import { ManagerDiscountDisplay } from "@/components/made/manager-discount";
 import { EightySixList } from "./eighty-six-list";
 import { CurrencyDisplay } from "../currency-display";
 
@@ -20,7 +20,7 @@ export function FormattedLogout() {
     const float = useAtomValue(atoms.floatAtom)
     const flow = useAtomValue(atoms.flowAtom)
     const issues = useAtomValue(atoms.issuesAtom)
-    const eightySix = useAtomValue(atoms.eightySixAtom)
+    // const eightySix = useAtomValue(atoms.eightySixAtom)
     const managerDiscounts = useAtomValue(atoms.managerDiscountsAtom)
     const BOHDiscount = useAtomValue(atoms.BOHDiscountAtom)
     const FOHonShift = useAtomValue(atoms.FOHonShiftAtom)
@@ -28,10 +28,10 @@ export function FormattedLogout() {
     const NBH = useAtomValue(atoms.NBHAtom)
     const owners = useAtomValue(atoms.ownersAtom)
     const trainingDiscounts = useAtomValue(atoms.trainingDiscountsAtom)
-    const pintCard = useAtomValue(atoms.pintCardAtom)
-    const pickleCard = useAtomValue(atoms.pickleCardAtom)
-    const teamNacho = useAtomValue(atoms.teamNachoAtom)
-    const guestSatisfaction = useAtomValue(atoms.guestSatisfactionAtom)
+    // const pintCard = useAtomValue(atoms.pintCardAtom)
+    // const pickleCard = useAtomValue(atoms.pickleCardAtom)
+    // const teamNacho = useAtomValue(atoms.teamNachoAtom)
+    // const guestSatisfaction = useAtomValue(atoms.guestSatisfactionAtom)
 
     return (
         <div className="formatted-output-block">
