@@ -59,55 +59,70 @@ export function FormattedLogout() {
             <h2>DISCOUNTS</h2>
             <ul className="list-disc ml-10">
                 <li>Manager on shift (x100, x50)
-                    <ul className="list-[circle] ml-10">
+                    <ListCircles>
                         <li></li>
-                    </ul>
+                    </ListCircles>
                 </li>
                 <li>BOH on shift (x100, x50)
-                    <ul className="list-[circle] ml-10">
+                    <ListCircles>
                         <li></li>
-                    </ul>
+                    </ListCircles>
                 </li>
                 <li>FOH on shift (x50)
-                    <ul className="list-[circle] ml-10">
+                    <ListCircles>
                         <li></li>
-                    </ul>
+                    </ListCircles>
                 </li>
                 <li>Staff not on shift (x25)
-                    <ul className="list-[circle] ml-10">
+                    <ListCircles>
                         <li></li>
-                    </ul>
+                    </ListCircles>
                 </li>
                 <li>NBH (x10)
-                    <ul className="list-[circle] ml-10">
+                    <ListCircles>
                         <li></li>
-                    </ul>
+                    </ListCircles>
                 </li>
                 <li>Owners (x50)
-                    <ul className="list-[circle] ml-10">
+                    <ListCircles>
                         <li></li>
-                    </ul>
+                    </ListCircles>
                 </li>
                 <li>Training Discount (x100)
-                    <ul className="list-[circle] ml-10">
+                    <ListCircles>
                         <li>c</li>
-                    </ul>
+                    </ListCircles>
                 </li>
                 <li>Pint/Pickle cards/ Team nachos (amount of cards/orders)
-                    <ul className="list-[circle] ml-10">
+                    <ListCircles>
                         <li>c</li>
-                    </ul>
+                    </ListCircles>
                 </li>
                 <li>Guest Satisfaction (% and reason)
-                    <ul className="list-[circle] ml-10">
+                    <ListCircles>
                         <li> c</li>
-                    </ul>
+                    </ListCircles>
                 </li>
             </ul>
         </div>
     </div>
     )
 }
+
+const Listify = ({jotVal}) => (
+  <>
+    {jotVal ? jotVal.map((entry) => <li key={entry}>{entry}</li>) : <li></li>}
+  </>
+)
+
+const ListCircles = ({children}) => (
+  <ul className="list-[circle] ml-10">
+    {children}
+  </ul>
+)
+
+
+
 
 const DoubleBreak = () => <><br /><br /></>
 
