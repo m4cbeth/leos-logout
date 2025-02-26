@@ -13,6 +13,7 @@ import { ManagerDiscountDisplay, ManagerDiscountEntry } from "@/components/made/
 import { Input } from "@/components/ui/input";
 import { EightySixList } from "@/components/made/eighty-six-list";
 import { FormattedLogout } from "@/components/made/formatted-output";
+import { BOHDiscountDisplay, BOHDiscountEntry } from "@/components/made/BOH-discount";
 
 export default function Home() {
   
@@ -147,7 +148,9 @@ export default function Home() {
             <ManagerDiscountEntry />            
           </div>
           <div>
-            {/* BOH on shift (x100, x50) */}
+            <Heading title={'BOH Discounts'}/>
+            <BOHDiscountDisplay />
+            <BOHDiscountEntry />
           </div>
           <div>
             {/* FOH on shift (x50) */}

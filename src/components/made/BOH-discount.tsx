@@ -30,7 +30,7 @@ export function BOHDiscountDisplay () {
     </ul>
   )
 }
-export function ManagerDiscountEntry() {
+export function BOHDiscountEntry() {
   const [percent, setPercent] = useState(null)
   const [employeeName, setName] = useState("")
   const [discounts, setDiscounts] = useAtom(BOHDiscountAtom)
@@ -46,7 +46,7 @@ export function ManagerDiscountEntry() {
   return (
     <div>
       <div className="flex items-center">
-          <Input placeholder="Manager's Name"
+          <Input placeholder="Employee's Name"
               value={employeeName}
               onChangeValue={setName}
               className="mr-5"
