@@ -34,6 +34,7 @@ export default function Home() {
   const [issues, setIssues] = useAtom(atoms.issuesAtom)
   const [eightySixToAdd, set86] = useState("")
   const [eightySixItems, set86Items] = useAtom(atoms.eightySixAtom)
+  const [takeoutIssues, setTakeoutIssues] = useAtom(atoms.takeoutIssuesAtom)
 
   const add86 = () => {
     const new86Items = [...eightySixItems]
@@ -144,7 +145,8 @@ export default function Home() {
             </Button>
           </div>
           <div>
-            {/* takeout */}
+            <Heading title={'Takeout flow/Downtimes/Pauses/Comments'} />
+            <Textarea value={takeoutIssues} onChangeValue={setTakeoutIssues} placeholder="Describe any issues" />
           </div>
           <div>
             <Heading title={'Manager Discounts'} />

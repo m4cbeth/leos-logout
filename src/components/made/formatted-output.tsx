@@ -130,7 +130,7 @@ export function FormattedLogout() {
 
 const Listify = ({jotVal}) => (
   <>
-    {jotVal ? jotVal.map((entry) => <li key={entry}>{entry}</li>) : <li></li>}
+    {jotVal ? jotVal.map((entry) => <li key={entry}>{entry}</li>) : <li>none</li>}
   </>
 )
 
