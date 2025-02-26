@@ -6,8 +6,7 @@ import { X } from "lucide-react"
 const Input = React.forwardRef<HTMLInputElement, 
 React.ComponentProps<"input"> & {
   onChangeValue?: (value: string) => void;
-  jotSet?: (value: any) => void;
-  suffix?: any;
+  jotSet?: (value: (string | number)[]) => void;
 }
 >(
   ({ className, jotSet, onChangeValue, value, type, ...props }, ref) => {
@@ -15,7 +14,7 @@ React.ComponentProps<"input"> & {
     const handleClear = () => {
       console.log('click')
       onChangeValue?.("")
-      jotSet?.(typeof value === 'string' ? "" : 0)
+      jotSet([])
     }
     return (
       <div className="relative w-full">
