@@ -113,7 +113,8 @@ export default function PercentInput({jotSet, jotVal = 0}) {
   return (
     <Input
       className="font-thin w-full"
-      type="number"
+      type="text"
+      inputMode="numeric"
       value={`${displayValue}`}
       onChange={handleChange}
       placeholder="0.00%"
