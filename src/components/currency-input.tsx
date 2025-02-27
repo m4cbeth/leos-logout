@@ -28,7 +28,7 @@ const CurrencyInput = ({jotSet, jotVal = 0}) => {
     <Input
       jotSet={jotSet}
       className="font-thin w-full"
-      type="text"
+      type="number"
       value={displayValue}
       onChange={handleChange}
       placeholder="$0.00"
