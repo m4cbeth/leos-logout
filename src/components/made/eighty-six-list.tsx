@@ -6,7 +6,7 @@ export function EightySixList () {
     const eightySixItems = useAtomValue(eightySixAtom)
     return (
     eightySixItems.length > 0 && (
-      <ul>
+      <ul className="font-thin">
         {eightySixItems.map((item) => (
           <li key={item}>- {item}</li>
         ))}
