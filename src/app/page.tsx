@@ -28,13 +28,14 @@ export default function Home() {
   const [discountsAmount, setDiscAmount] = useAtom(atoms.discountsAmountAtom)
   const [discountPercent, setDiscPercent] = useAtom(atoms.discountsPercentAtom)
   const [takeout, setTakeout] = useAtom(atoms.takeoutAtom)
-  const [promo, setPromo] = useAtom(atoms.promoAtom)
+  const [promoTotal, setPromoTotal] = useAtom(atoms.promoTotalAtom)
   const [float, setFloat] = useAtom(atoms.floatAtom)
   const [flow, setFlow] = useAtom(atoms.flowAtom)
   const [issues, setIssues] = useAtom(atoms.issuesAtom)
   const [eightySixToAdd, set86] = useState("")
   const [eightySixItems, set86Items] = useAtom(atoms.eightySixAtom)
   const [takeoutIssues, setTakeoutIssues] = useAtom(atoms.takeoutIssuesAtom)
+  const [promoDesc, setPromoDesc] = useAtom(atoms.promoDescAtom)
 
   const add86 = () => {
     const new86Items = [...eightySixItems]
@@ -120,7 +121,7 @@ export default function Home() {
           </div>
           <div>
             <Heading title="Promos"/>
-            <CurrencyInput key={'promo'} jotVal={promo} jotSet={setPromo}/>
+            <CurrencyInput key={'promo'} jotVal={promoTotal} jotSet={setPromoTotal}/>
           </div>
           <div>
             <Heading title={'Float'}/>
@@ -162,25 +163,14 @@ export default function Home() {
             <OtherDiscounts />            
           </div>
           <div>
-            {/* Staff not on shift (x25) */}
-          </div>
-          <div>
-            {/* NBH (x10) */}
-          </div>
-          <div>
-            {/* Owners (x50) */}
-          </div>
-          <div>
-            {/* Training */}
-          </div>
-          <div>
             {/* Pint / pickle */}
           </div>
           <div>
             {/* Guest Satisfaction (% and reason) */}
           </div>
           <div>
-            {/* Promo */}
+            <Heading title={'Promo'}/>
+            <Textarea value={promoDesc} onChangeValue={setPromoDesc} placeholder="Describe the promos"/>
           </div>
           <div>
             {/* Deletes */}

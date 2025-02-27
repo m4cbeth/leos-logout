@@ -17,7 +17,7 @@ export const foodSalesAtom = atom(0)
 export const discountsAmountAtom = atom(0)
 export const discountsPercentAtom = atom(0)
 export const takeoutAtom = atom(0)
-export const promoAtom = atom(0)
+export const promoTotalAtom = atom(0)
 export const floatAtom = atom(0)
 export const flowAtom = atom("")
 export const issuesAtom = atom("")
@@ -34,6 +34,13 @@ export const pintCardAtom = atom<string[]>([])
 export const pickleCardAtom = atom<string[]>([])
 export const teamNachoAtom = atom<string[]>([])
 export const guestSatisfactionAtom = atom<string[]>([])
+export const promoDescAtom = atom("")
+export const deletesAtom = atom("")
+export const wasteAtom = atom("")
+export const maintenanceAtom = atom("")
+export const fohCutTimes = atom([])
+
+
 
 // ================WORKING================
 

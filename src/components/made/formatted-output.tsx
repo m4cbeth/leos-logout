@@ -16,7 +16,7 @@ export function FormattedLogout() {
     const takeout = useAtomValue(atoms.takeoutAtom)
     const discountsAmount = useAtomValue(atoms.discountsAmountAtom)
     const discountPercent = useAtomValue(atoms.discountsPercentAtom)
-    const promo = useAtomValue(atoms.promoAtom)
+    const promo = useAtomValue(atoms.promoTotalAtom)
     const float = useAtomValue(atoms.floatAtom)
     const flow = useAtomValue(atoms.flowAtom)
     const issues = useAtomValue(atoms.issuesAtom)
