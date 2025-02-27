@@ -123,6 +123,31 @@ export function FormattedLogout() {
                     </ListCircles>
                 </li>
             </ul>
+
+            PROMO:
+            <DoubleBreak/>
+            ▪︎ {}
+            <DoubleBreak/>
+
+            DELETES:
+            <DoubleBreak/>
+            ▪︎ {}
+            <DoubleBreak/>
+
+            WASTE:
+            <DoubleBreak/>
+            ▪︎ {}
+            <DoubleBreak/>
+
+            MAINTENANCE:
+            <DoubleBreak/>
+            ▪︎ {}
+            <DoubleBreak/>
+
+            FOH CUT TIMES:
+            <DoubleBreak/>
+            ▪︎ {}
+            <DoubleBreak/>
         </div>
         <Button variant="outline" onClick={copyToPostText} className="my-3 w-full">Copy</Button>
     </div>
