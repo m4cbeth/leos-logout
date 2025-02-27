@@ -23,7 +23,7 @@ export function BOHDiscountDisplay () {
   const discounts = useAtomValue(BOHDiscountAtom)
 
   return discounts.length > 0 && (
-    <ul>
+    <ul className="font-thin">
       {discounts.map((item) => (
         <li key={item}>- {item}</li>
       ))}

@@ -124,7 +124,7 @@ export function FormattedLogout() {
                 </li>
             </ul>
 
-            PROMO:
+            <h2 className="mt-5">PROMO:</h2>
             <DoubleBreak/>
             ▪︎ {}
             <DoubleBreak/>

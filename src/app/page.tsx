@@ -36,6 +36,10 @@ export default function Home() {
   const [eightySixItems, set86Items] = useAtom(atoms.eightySixAtom)
   const [takeoutIssues, setTakeoutIssues] = useAtom(atoms.takeoutIssuesAtom)
   const [promoDesc, setPromoDesc] = useAtom(atoms.promoDescAtom)
+  const [deletes, setDeletes] = useAtom(atoms.deletesAtom)
+  const [waste, setWaste] = useAtom(atoms.wasteAtom)
+  const [maintenance, setMaintenance] = useAtom(atoms.maintenanceAtom)
+  const [fohCutTimes, setFohCutTimes] = useAtom(atoms.fohCutTimes)
 
   const add86 = () => {
     const new86Items = [...eightySixItems]
@@ -173,16 +177,31 @@ export default function Home() {
             <Textarea value={promoDesc} onChangeValue={setPromoDesc} placeholder="Describe the promos"/>
           </div>
           <div>
-            {/* Deletes */}
+            <Heading title={'Deletes'}/>
+            <Textarea value={promoDesc} onChangeValue={setPromoDesc} placeholder="Describe the promos"/>
           </div>
           <div>
-            {/* Waste */}
+            <Heading title={'Waste'}/>
+            <Textarea value={promoDesc} onChangeValue={setPromoDesc} placeholder="Describe the promos"/>
           </div>
           <div>
-            {/* Maintenance */}
+            <Heading title={'Maintenance'}/>
+            <Textarea value={promoDesc} onChangeValue={setPromoDesc} placeholder="Describe the promos"/>
           </div>
           <div>
-            {/* FOH cut times */}
+            <Heading title={'FOH Cut Times'}/>
+            <Textarea value={promoDesc} onChangeValue={setPromoDesc} placeholder="Describe the promos"/>
+          </div>
+          <div>
+            <Heading title={'Deletes'} />
+            <Textarea value={deletes} onChangeValue={setDeletes} placeholder="Describe the deletes" />
+          </div>
+          <div>
+            <Heading title={'Maintenance'} />
+          </div>
+          <div>
+            <Heading title={'FOH Cut Times'} />
+            maybe similar to discounts or other, where each employye and time is enerreted in text field then added to array
           </div>
         </form>
       </TabsContent>
