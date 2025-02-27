@@ -124,6 +124,7 @@ export function FormattedLogout() {
                 </li>
             </ul>
         </div>
+        <Button variant="outline" onClick={copyToPostText} className="my-3 w-full">Copy</Button>
     </div>
     )
 }

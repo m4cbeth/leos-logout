@@ -54,7 +54,7 @@ export default function Home() {
 
 
     <Tabs defaultValue="input" className="w-full">
-      <TabsList className="grid w-full grid-cols-2">
+      <TabsList className="grid w-full grid-cols-2 sticky top-0 z-10 shadow">
         <TabsTrigger value="input">Input</TabsTrigger>
         <TabsTrigger value="topost">Formatted</TabsTrigger>
       </TabsList>
