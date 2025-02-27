@@ -178,30 +178,19 @@ export default function Home() {
           </div>
           <div>
             <Heading title={'Deletes'}/>
-            <Textarea value={promoDesc} onChangeValue={setPromoDesc} placeholder="Describe the promos"/>
+            <Textarea value={deletes} onChangeValue={setDeletes} placeholder="Describe the promos"/>
           </div>
           <div>
             <Heading title={'Waste'}/>
-            <Textarea value={promoDesc} onChangeValue={setPromoDesc} placeholder="Describe the promos"/>
+            <Textarea value={waste} onChangeValue={setWaste} placeholder="Describe the promos"/>
           </div>
           <div>
             <Heading title={'Maintenance'}/>
-            <Textarea value={promoDesc} onChangeValue={setPromoDesc} placeholder="Describe the promos"/>
+            <Textarea value={maintenance} onChangeValue={setMaintenance} placeholder="Describe the promos"/>
           </div>
           <div>
             <Heading title={'FOH Cut Times'}/>
             <Textarea value={promoDesc} onChangeValue={setPromoDesc} placeholder="Describe the promos"/>
-          </div>
-          <div>
-            <Heading title={'Deletes'} />
-            <Textarea value={deletes} onChangeValue={setDeletes} placeholder="Describe the deletes" />
-          </div>
-          <div>
-            <Heading title={'Maintenance'} />
-          </div>
-          <div>
-            <Heading title={'FOH Cut Times'} />
-            maybe similar to discounts or other, where each employye and time is enerreted in text field then added to array
           </div>
         </form>
       </TabsContent>
