@@ -12,7 +12,7 @@ export default function PercentageInput() {
 
     const handleChange = (e) => {
         e.preventDefault()
-        setFaceState(e.target.value+e.target.value)
+        setFaceState((prev) => `${prev}${e}`)
     }
 
     return (
