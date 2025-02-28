@@ -19,14 +19,14 @@ export function QRCodeDialogue() {
       <DialogTrigger asChild>
         <Button variant="outline">Share <Share2/></Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-[425px] m-5">
         <DialogHeader>
           <DialogTitle>Share the app with the team</DialogTitle>
           <DialogDescription>
             The more the merrier; not to mention consistency!
           </DialogDescription>
         </DialogHeader>
-        <div className="grid gap-4 py-4">
+        <div className="grid gap-4 py-4 mx-auto">
           <Image alt="QR Code" width={400} height={400} src="/leos-logout-qrcode.png"/>
         </div>
         <DialogFooter>

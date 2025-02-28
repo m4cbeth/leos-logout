@@ -16,6 +16,7 @@ import { FormattedLogout } from "@/components/made/formatted-output";
 import { BOHDiscountDisplay, BOHDiscountEntry } from "@/components/made/BOH-discount";
 import { Heading } from "@/components/helpers";
 import OtherDiscounts from "@/components/made/other-discounts";
+import { ClaudePercentageInput } from "@/components/made/claude-percent-input";
 
 
 
@@ -121,6 +122,7 @@ export default function Home() {
             </div>
             <div>
               <PercentInput key="discountspercent" jotVal={discountPercent} jotSet={setDiscPercent}/>
+              <ClaudePercentageInput/>
             </div>
           </div>
           <div>
