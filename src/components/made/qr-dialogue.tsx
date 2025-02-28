@@ -35,6 +35,6 @@ export function QRCodeDialogue() {
           </DialogClose>
         </DialogFooter>
       </DialogContent>
-    </Dialog>
+    </Dialog> 
   )
 }
