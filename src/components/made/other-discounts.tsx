@@ -41,14 +41,10 @@ export default function OtherDiscounts(){
     )
 }
 
-function Entry<T extends string[]>({ 
+function Entry({ 
     atom, 
     title, 
     placeholder 
-  }: { 
-    atom: WritableAtom<T, [T], void>;
-    title: string; 
-    placeholder: string 
   }) {
     const [jotVal, jotSet] = useAtom(atom);
     const [entry, setEntry] = useState("");

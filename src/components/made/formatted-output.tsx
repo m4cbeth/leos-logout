@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button"
 import { useAtomValue } from "jotai"
 import * as atoms from "@/app/atoms"
-// import { ManagerDiscountDisplay } from "@/components/made/manager-discount";
 import { EightySixList } from "./eighty-six-list";
 import { CurrencyDisplay } from "../currency-display";
 
@@ -20,7 +19,6 @@ export function FormattedLogout() {
     const float = useAtomValue(atoms.floatAtom)
     const flow = useAtomValue(atoms.flowAtom)
     const issues = useAtomValue(atoms.issuesAtom)
-    // const eightySix = useAtomValue(atoms.eightySixAtom)
     const managerDiscounts = useAtomValue(atoms.managerDiscountsAtom)
     const BOHDiscount = useAtomValue(atoms.BOHDiscountAtom)
     const FOHonShift = useAtomValue(atoms.FOHonShiftAtom)
@@ -32,6 +30,11 @@ export function FormattedLogout() {
     // const pickleCard = useAtomValue(atoms.pickleCardAtom)
     // const teamNacho = useAtomValue(atoms.teamNachoAtom)
     // const guestSatisfaction = useAtomValue(atoms.guestSatisfactionAtom)
+    const promoDesc = useAtomValue(atoms.promoDescAtom)
+    const deletes = useAtomValue(atoms.deletesAtom)
+    const waste = useAtomValue(atoms.wasteAtom)
+    const maintenance = useAtomValue(atoms.maintenanceAtom)
+    const fohCutTimes = useAtomValue(atoms.fohCutTimesAtom)
 
     return (
         <div className="formatted-output-block">
@@ -129,27 +132,27 @@ export function FormattedLogout() {
 
             <h2 className="mt-5">PROMO:</h2>
             <DoubleBreak/>
-            ▪︎ {}
+            ▪︎ {promoDesc}
             <DoubleBreak/>
 
             DELETES:
             <DoubleBreak/>
-            ▪︎ {}
+            ▪︎ {deletes}
             <DoubleBreak/>
 
             WASTE:
             <DoubleBreak/>
-            ▪︎ {}
+            ▪︎ {waste}
             <DoubleBreak/>
 
             MAINTENANCE:
             <DoubleBreak/>
-            ▪︎ {}
+            ▪︎ {maintenance}
             <DoubleBreak/>
 
             FOH CUT TIMES:
             <DoubleBreak/>
-            ▪︎ {}
+            ▪︎ {fohCutTimes}
             <DoubleBreak/>
         </div>
         <Button variant="outline" onClick={copyToPostText} className="my-3 w-full">Copy</Button>
