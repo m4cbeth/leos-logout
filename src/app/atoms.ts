@@ -1,4 +1,3 @@
-import { atom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
 
 // Helper function to handle doing a logout after midnight

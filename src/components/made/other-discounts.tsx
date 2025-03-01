@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Heading } from "@/components/helpers";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button"
-import { useAtom, WritableAtom  } from "jotai";
+import { useAtom  } from "jotai";
 import * as atoms from "@/app/atoms";
 
 
@@ -46,12 +46,12 @@ function Entry({
     title, 
     placeholder 
   }) {
-    const [jotVal, jotSet] = useAtom(atom);
+    const [jotVal, jotSet] = useAtom<string[]>(atom);
     const [entry, setEntry] = useState("");
 
     const addDiscount = () => {
         if (!entry) return
-        const newState = (Array.isArray(jotVal) ? [...jotVal, entry] : [entry]) as T;
+        const newState = (Array.isArray(jotVal) ? [...jotVal, entry] : [entry])
         jotSet(newState)
         setEntry("")
     }
