@@ -40,7 +40,7 @@ export default function Home() {
   const [deletes, setDeletes] = useAtom(atoms.deletesAtom)
   const [waste, setWaste] = useAtom(atoms.wasteAtom)
   const [maintenance, setMaintenance] = useAtom(atoms.maintenanceAtom)
-  const [fohCutTimes, setFohCutTimes] = useAtom(atoms.fohCutTimes)
+  // const [fohCutTimes, setFohCutTimes] = useAtom(atoms.fohCutTimes)
 
   const add86 = () => {
     const new86Items = [...eightySixItems]
