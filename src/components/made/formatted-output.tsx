@@ -130,9 +130,9 @@ export function FormattedLogout() {
                 </li>
             </ul>
 
-            <h2 className="mt-5">PROMO:</h2>
-            <DoubleBreak/>
-            ▪︎ {promoDesc}
+            <div className="mt-3 mb-0">PROMO:</div>
+            <br />
+            ▪︎ {promoDesc} heyydl
             <DoubleBreak/>
 
             DELETES:
@@ -162,7 +162,7 @@ export function FormattedLogout() {
 
 const Listify = ({jotVal}) => (
   <>
-    {jotVal ? jotVal.map((entry) => <li key={entry}>{entry}</li>) : <li>none</li>}
+    {jotVal.length ? jotVal.map((entry) => <li key={entry}>{entry}</li>) : <li> </li>}
   </>
 )
 

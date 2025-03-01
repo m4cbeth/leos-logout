@@ -23,7 +23,8 @@ import { ClaudePercentageInput } from "@/components/made/claude-percent-input";
 export default function Home() {
   
  
-  const [selectedTab, setSelectedTab] = useAtom(atoms.shiftAtom)
+  const [shift, setShift] = useAtom(atoms.shiftAtom)
+  const [reportTime, setReportTime] = useAtom(atoms.reportTimeAtom)
   const [sales, setSales] = useAtom(atoms.salesAtom)
   const [foodSales, setFoodSales] = useAtom(atoms.foodSalesAtom)
   const [discountsAmount, setDiscAmount] = useAtom(atoms.discountsAmountAtom)
@@ -79,7 +80,7 @@ export default function Home() {
               Shift:
             </div>
             <div className="ml-5">
-              <Tabs defaultValue="Day" value={selectedTab} onValueChange={setSelectedTab}>
+              <Tabs defaultValue="Day" value={shift} onValueChange={setShift}>
                 <TabsList>
                   <TabsTrigger value="Day">Day</TabsTrigger>
                   <TabsTrigger value="Night">Night</TabsTrigger>
@@ -89,7 +90,7 @@ export default function Home() {
           </div>
           <div>
             <Heading title={'Report printed at:'}></Heading>
-            <Input/>
+            <Input key={'report'} value={reportTime} onChangeValue={setReportTime} placeholder="Enter report time"/>
           </div>
           <div className="flex flex-col my-2 justify-between">
             <div>

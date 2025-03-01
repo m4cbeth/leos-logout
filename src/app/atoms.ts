@@ -1,3 +1,4 @@
+import { atom, useSetAtom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
 
 // Helper function to handle doing a logout after midnight
@@ -7,10 +8,9 @@ const getAdjustedDate = () => {
     now.setDate(now.getDate() - 1);
   }
   return now
-//   return now.toISOString().split('T')[0]; // Return as YYYY-MM-DD
-};
+}
 
-export const dateAtom = atomWithStorage("date", getAdjustedDate(), undefined, { getOnInit: true});
+export const dateAtom = atom(getAdjustedDate());
 export const shiftAtom = atomWithStorage("shift", "Day", undefined, { getOnInit: true });
 export const reportTimeAtom = atomWithStorage("reportTime", "", undefined, { getOnInit: true });
 export const salesAtom = atomWithStorage("sales", 0, undefined, { getOnInit: true });
@@ -41,7 +41,9 @@ export const wasteAtom = atomWithStorage("waste", "", undefined, { getOnInit: tr
 export const maintenanceAtom = atomWithStorage("maintenance", "", undefined, { getOnInit: true });
 export const fohCutTimesAtom = atomWithStorage("fohCutTimes", "", undefined, { getOnInit: true });
 
-
+export const reset = () => {
+  
+}
 
 // ================WORKING================
 
@@ -50,30 +52,10 @@ export const fohCutTimesAtom = atomWithStorage("fohCutTimes", "", undefined, { g
 // ===================TODO==================
 
 
-
-// TAKE OUT FLOW/DOWNTIMES/PAUSES/COMMENTS
-
-// ▪︎
-
-// DISCOUNTS
-// Manager on shift (x100, x50)
-// BOH on shift (x100, x50)
-// FOH on shift (x50)
-// Staff not on shift (x25)
-// NBH (X10)
-// Owners (x50)
-// Training Discount (x100)
 // Pint/Pickle cards/ Team nachos (amount of cards/orders)
 // Guest Satisfaction (% and reason)
-// PROMO:
-// Deletes:
-// WASTE
-// ▪︎
-// MAINTENANCE
-// ▪︎
-// FOH CUT TIMES
-// ▪︎
-//
+
+
 // ===================DONE==================
 // DATE:Feb 23 night
 // SALES: $12861.03
@@ -89,6 +71,26 @@ export const fohCutTimesAtom = atomWithStorage("fohCutTimes", "", undefined, { g
 // ▪︎
 //
 // 86D
+// ▪︎
+// DISCOUNTS
+// Manager on shift (x100, x50)
+// BOH on shift (x100, x50)
+// FOH on shift (x50)
+// Staff not on shift (x25)
+// NBH (X10)
+// Owners (x50)
+// Training Discount (x100)
+//
+//
+// PROMO:
+// Deletes:
+// WASTE:
+// TAKE OUT FLOW/DOWNTIMES/PAUSES/COMMENTS
+// ▪︎
+// ▪︎
+// MAINTENANCE
+// ▪︎
+// FOH CUT TIMES
 // ▪︎
 
 
