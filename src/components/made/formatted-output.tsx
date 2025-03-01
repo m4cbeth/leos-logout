@@ -44,6 +44,9 @@ export function FormattedLogout() {
             SHIFT: {shift} 
             <DoubleBreak />
             
+            REPORT PRINTED AT: {shift} 
+            <DoubleBreak />
+            
             SALES: <CurrencyDisplay key={'sales'} amount={sales} />
             <DoubleBreak />
             

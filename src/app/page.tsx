@@ -40,7 +40,7 @@ export default function Home() {
   const [deletes, setDeletes] = useAtom(atoms.deletesAtom)
   const [waste, setWaste] = useAtom(atoms.wasteAtom)
   const [maintenance, setMaintenance] = useAtom(atoms.maintenanceAtom)
-  // const [fohCutTimes, setFohCutTimes] = useAtom(atoms.fohCutTimes)
+  const [fohCutTimes, setFohCutTimes] = useAtom(atoms.fohCutTimesAtom)
 
   const add86 = () => {
     const new86Items = [...eightySixItems]
@@ -74,9 +74,9 @@ export default function Home() {
               <DatePicker/>
             </div>
           </div>
-          <div className="flex flco my-2">
+          <div className="flex items-center my-2">
             <div>
-              <Heading title="Shift:" />
+              Shift:
             </div>
             <div className="ml-5">
               <Tabs defaultValue="Day" value={selectedTab} onValueChange={setSelectedTab}>
@@ -183,19 +183,19 @@ export default function Home() {
           </div>
           <div>
             <Heading title={'Deletes'}/>
-            <Textarea value={deletes} onChangeValue={setDeletes} placeholder="Describe the promos"/>
+            <Textarea value={deletes} onChangeValue={setDeletes} placeholder="Describe the deletes"/>
           </div>
           <div>
             <Heading title={'Waste'}/>
-            <Textarea value={waste} onChangeValue={setWaste} placeholder="Describe the promos"/>
+            <Textarea value={waste} onChangeValue={setWaste} placeholder="Describe all waste"/>
           </div>
           <div>
             <Heading title={'Maintenance'}/>
-            <Textarea value={maintenance} onChangeValue={setMaintenance} placeholder="Describe the promos"/>
+            <Textarea value={maintenance} onChangeValue={setMaintenance} placeholder="Describe any maintenance notes"/>
           </div>
           <div>
             <Heading title={'FOH Cut Times'}/>
-            <Textarea value={promoDesc} onChangeValue={setPromoDesc} placeholder="Describe the promos"/>
+            <Textarea value={fohCutTimes} onChangeValue={setFohCutTimes} placeholder="Names and times of FOH cuts"/>
           </div>
         </form>
       </TabsContent>

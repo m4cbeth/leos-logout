@@ -1,4 +1,5 @@
 import { atom } from 'jotai'
+import { atomWithStorage } from 'jotai/utils'
 
 // Helper function to handle doing a logout after midnight
 const getAdjustedDate = () => {
@@ -10,35 +11,36 @@ const getAdjustedDate = () => {
 //   return now.toISOString().split('T')[0]; // Return as YYYY-MM-DD
 };
 
-export const dateAtom = atom(getAdjustedDate());
-export const shiftAtom = atom("Day")
-export const salesAtom = atom(0)
-export const foodSalesAtom = atom(0)
-export const discountsAmountAtom = atom(0)
-export const discountsPercentAtom = atom(0)
-export const takeoutAtom = atom(0)
-export const promoTotalAtom = atom(0)
-export const floatAtom = atom(0)
-export const flowAtom = atom("")
-export const issuesAtom = atom("")
-export const takeoutIssuesAtom = atom("")
-export const eightySixAtom = atom<string[]>([])
-export const managerDiscountsAtom = atom<string[]>([])
-export const BOHDiscountAtom = atom<string[]>([])
-export const FOHonShiftAtom = atom<string[]>([])
-export const staffOffShiftAtom = atom<string[]>([])
-export const NBHAtom = atom<string[]>([])
-export const ownersAtom = atom<string[]>([])
-export const trainingDiscountsAtom = atom<string[]>([])
-export const pintCardAtom = atom<string[]>([])
-export const pickleCardAtom = atom<string[]>([])
-export const teamNachoAtom = atom<string[]>([])
-export const guestSatisfactionAtom = atom<string[]>([])
-export const promoDescAtom = atom("")
-export const deletesAtom = atom("")
-export const wasteAtom = atom("")
-export const maintenanceAtom = atom("")
-export const fohCutTimes = atom([])
+export const dateAtom = atomWithStorage("date", getAdjustedDate(), undefined, { getOnInit: true});
+export const shiftAtom = atomWithStorage("shift", "Day", undefined, { getOnInit: true });
+export const reportTimeAtom = atomWithStorage("reportTime", "", undefined, { getOnInit: true });
+export const salesAtom = atomWithStorage("sales", 0, undefined, { getOnInit: true });
+export const foodSalesAtom = atomWithStorage("foodSales", 0, undefined, { getOnInit: true });
+export const discountsAmountAtom = atomWithStorage("discountsAmount", 0, undefined, { getOnInit: true });
+export const discountsPercentAtom = atomWithStorage("discountsPercent", 0, undefined, { getOnInit: true });
+export const takeoutAtom = atomWithStorage("takeout", 0, undefined, { getOnInit: true });
+export const promoTotalAtom = atomWithStorage("promoTotal", 0, undefined, { getOnInit: true });
+export const floatAtom = atomWithStorage("float", 0, undefined, { getOnInit: true });
+export const flowAtom = atomWithStorage("flow", "", undefined, { getOnInit: true });
+export const issuesAtom = atomWithStorage("issues", "", undefined, { getOnInit: true });
+export const takeoutIssuesAtom = atomWithStorage("takeoutIssues", "", undefined, { getOnInit: true });
+export const eightySixAtom = atomWithStorage("eightySix", [], undefined, { getOnInit: true });
+export const managerDiscountsAtom = atomWithStorage("managerDiscounts", [], undefined, { getOnInit: true });
+export const BOHDiscountAtom = atomWithStorage("BOHDiscount", [], undefined, { getOnInit: true });
+export const FOHonShiftAtom = atomWithStorage("FOHonShift", [], undefined, { getOnInit: true });
+export const staffOffShiftAtom = atomWithStorage("staffOffShift", [], undefined, { getOnInit: true });
+export const NBHAtom = atomWithStorage("NBH", [], undefined, { getOnInit: true });
+export const ownersAtom = atomWithStorage("owners", [], undefined, { getOnInit: true });
+export const trainingDiscountsAtom = atomWithStorage("trainingDiscounts", [], undefined, { getOnInit: true });
+export const pintCardAtom = atomWithStorage("pintCard", [], undefined, { getOnInit: true });
+export const pickleCardAtom = atomWithStorage("pickleCard", [], undefined, { getOnInit: true });
+export const teamNachoAtom = atomWithStorage("teamNacho", [], undefined, { getOnInit: true });
+export const guestSatisfactionAtom = atomWithStorage("guestSatisfaction", [], undefined, { getOnInit: true });
+export const promoDescAtom = atomWithStorage("promoDesc", "", undefined, { getOnInit: true });
+export const deletesAtom = atomWithStorage("deletes", "", undefined, { getOnInit: true });
+export const wasteAtom = atomWithStorage("waste", "", undefined, { getOnInit: true });
+export const maintenanceAtom = atomWithStorage("maintenance", "", undefined, { getOnInit: true });
+export const fohCutTimesAtom = atomWithStorage("fohCutTimes", "", undefined, { getOnInit: true });
 
 
 
