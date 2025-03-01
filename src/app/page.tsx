@@ -213,6 +213,17 @@ export default function Home() {
                   
 
       </TabsContent>
+      <div className="  
+        font-black
+        text-outline
+        text-red-700
+        text-5xl
+        italic
+        flex items-center justify-center 
+        h-[25vh] 
+        bg-[url('/dangerzone.webp')]">
+        DANGERZONE
+      </div>
     </Tabs>
 
       </main>

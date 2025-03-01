@@ -42,7 +42,69 @@ export const maintenanceAtom = atomWithStorage("maintenance", "", undefined, { g
 export const fohCutTimesAtom = atomWithStorage("fohCutTimes", "", undefined, { getOnInit: true });
 
 export const reset = () => {
-  
+  const setDate = useSetAtom(dateAtom);
+  const setShift = useSetAtom(shiftAtom);
+  const setReportTime = useSetAtom(reportTimeAtom);
+  const setSales = useSetAtom(salesAtom);
+  const setFoodSales = useSetAtom(foodSalesAtom);
+  const setDiscountsAmount = useSetAtom(discountsAmountAtom);
+  const setDiscountsPercent = useSetAtom(discountsPercentAtom);
+  const setTakeout = useSetAtom(takeoutAtom);
+  const setPromoTotal = useSetAtom(promoTotalAtom);
+  const setFloat = useSetAtom(floatAtom);
+  const setFlow = useSetAtom(flowAtom);
+  const setIssues = useSetAtom(issuesAtom);
+  const setTakeoutIssues = useSetAtom(takeoutIssuesAtom);
+  const setEightySix = useSetAtom(eightySixAtom);
+  const setManagerDiscounts = useSetAtom(managerDiscountsAtom);
+  const setBOHDiscount = useSetAtom(BOHDiscountAtom);
+  const setFOHonShift = useSetAtom(FOHonShiftAtom);
+  const setStaffOffShift = useSetAtom(staffOffShiftAtom);
+  const setNBH = useSetAtom(NBHAtom);
+  const setOwners = useSetAtom(ownersAtom);
+  const setTrainingDiscounts = useSetAtom(trainingDiscountsAtom);
+  const setPintCard = useSetAtom(pintCardAtom);
+  const setPickleCard = useSetAtom(pickleCardAtom);
+  const setTeamNacho = useSetAtom(teamNachoAtom);
+  const setGuestSatisfaction = useSetAtom(guestSatisfactionAtom);
+  const setPromoDesc = useSetAtom(promoDescAtom);
+  const setDeletes = useSetAtom(deletesAtom);
+  const setWaste = useSetAtom(wasteAtom);
+  const setMaintenance = useSetAtom(maintenanceAtom);
+  const setFohCutTimes = useSetAtom(fohCutTimesAtom);
+
+  return () => {
+    setDate(getAdjustedDate());
+    setShift("Day");
+    setReportTime("");
+    setSales(0);
+    setFoodSales(0);
+    setDiscountsAmount(0);
+    setDiscountsPercent(0);
+    setTakeout(0);
+    setPromoTotal(0);
+    setFloat(0);
+    setFlow("");
+    setIssues("");
+    setTakeoutIssues("");
+    setEightySix([]);
+    setManagerDiscounts([]);
+    setBOHDiscount([]);
+    setFOHonShift([]);
+    setStaffOffShift([]);
+    setNBH([]);
+    setOwners([]);
+    setTrainingDiscounts([]);
+    setPintCard([]);
+    setPickleCard([]);
+    setTeamNacho([]);
+    setGuestSatisfaction([]);
+    setPromoDesc("");
+    setDeletes("");
+    setWaste("");
+    setMaintenance("");
+    setFohCutTimes("");
+  };
 }
 
 // ================WORKING================
