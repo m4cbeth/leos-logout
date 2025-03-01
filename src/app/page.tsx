@@ -71,8 +71,7 @@ export default function Home() {
               <Heading title="Date:"/>
             </div>
             <div>
-              <DatePicker/> {/** todo: go into the date picker and make it's state refer to atom */}
-              {/* Printed at time needed next as well */}
+              <DatePicker/>
             </div>
           </div>
           <div className="flex flco my-2">
@@ -87,6 +86,10 @@ export default function Home() {
                 </TabsList>
               </Tabs>
             </div>
+          </div>
+          <div>
+            <Heading title={'Report printed at:'}></Heading>
+            <Input/>
           </div>
           <div className="flex flex-col my-2 justify-between">
             <div>
@@ -142,7 +145,7 @@ export default function Home() {
             <Textarea value={issues} onChangeValue={setIssues} placeholder="Describe how the service went." />
           </div>
           <div>
-            <Heading title="86'd Bar Products" />
+            <Heading title="86'd" />
             <EightySixList />
             <Input placeholder="Out of Stock Product"
               value={eightySixToAdd}
