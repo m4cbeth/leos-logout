@@ -1,13 +1,14 @@
 'use client'
 
+import PercentInput from "@/components/bruteforcepercent"
 import PercentageInput from "@/components/made/franken-percent"
 
 
 export default function Page() {
     return (
         <div>
-            <PercentageInput/>
-            
+            <PercentageInput  />
+            <PercentInput jotSet={null} />
         </div>
     )
 }
