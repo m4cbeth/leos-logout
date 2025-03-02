@@ -57,7 +57,7 @@ export default function Home() {
     <div className="items-center justify-items-center min-h-screen p-5  max-w-lg mx-auto font-[family-name:var(--font-geist-sans)]">
       
       <main className="flex justify-center mb-36 mt-1 border w-full p-3 justify-items-center flex-col gap-8 row-start-2 sm:items-start">
-        <h1 className="text-2xl font-thin text-center">Leo&apos;s Logout</h1>
+        <h1 className="self-center text-2xl font-thin">Leo&apos;s Logout</h1>
 
 
     <Tabs defaultValue="input" className="w-full">
@@ -220,22 +220,39 @@ export default function Home() {
         text-5xl
         italic
         flex items-center justify-center 
-        h-[25vh] 
+        h-[33vh] 
+        mb-5
         bg-[url('/dangerzone.webp')]">
         DANGERZONE
       </div>
-    </Tabs>
 
+      <div className="
+        h-[33vh]
+
+      ">
+        <ResetButton />
+      </div>
+
+    </Tabs>
       </main>
+
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
       </footer>
+
     </div>
   );
 }
 
 
 
-
+const ResetButton = () => {
+  const resetAll = atoms.useResetAllAtoms()
+  return (
+    <Button onClick={resetAll} className="text-5xl font-black text-black w-full h-full" variant="destructive">
+          RESET FORM
+    </Button>
+  )
+}
 
 
 

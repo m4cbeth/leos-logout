@@ -41,7 +41,7 @@ export const wasteAtom = atomWithStorage("waste", "", undefined, { getOnInit: tr
 export const maintenanceAtom = atomWithStorage("maintenance", "", undefined, { getOnInit: true });
 export const fohCutTimesAtom = atomWithStorage("fohCutTimes", "", undefined, { getOnInit: true });
 
-export const reset = () => {
+export const useResetAllAtoms = () => {
   const setDate = useSetAtom(dateAtom);
   const setShift = useSetAtom(shiftAtom);
   const setReportTime = useSetAtom(reportTimeAtom);
