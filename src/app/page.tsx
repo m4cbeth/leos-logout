@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import { useAtom, useSetAtom } from "jotai";
+import { useAtom } from "jotai";
 import * as atoms from "@/app/atoms"
 import { DatePicker } from "@/components/made/datepicker";
 import { Button } from "@/components/ui/button";
@@ -27,7 +27,7 @@ export default function Home() {
   const [sales, setSales] = useAtom(atoms.salesAtom)
   const [foodSales, setFoodSales] = useAtom(atoms.foodSalesAtom)
   const [discountsAmount, setDiscAmount] = useAtom(atoms.discountsAmountAtom)
-  const [undefined, setDiscPercent] = useAtom(atoms.discountsPercentAtom)
+  const [discPercent, setDiscPercent] = useAtom(atoms.discountsPercentAtom)
   const [takeout, setTakeout] = useAtom(atoms.takeoutAtom)
   const [promoTotal, setPromoTotal] = useAtom(atoms.promoTotalAtom)
   const [float, setFloat] = useAtom(atoms.floatAtom)
@@ -233,6 +233,7 @@ export default function Home() {
       </main>
 
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
+        <div className="hidden">{discPercent}</div>
       </footer>
 
     </div>
