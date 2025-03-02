@@ -17,6 +17,7 @@ import { BOHDiscountDisplay, BOHDiscountEntry } from "@/components/made/BOH-disc
 import { Heading } from "@/components/helpers";
 import OtherDiscounts from "@/components/made/other-discounts";
 import { ClaudePercentageInput } from "@/components/made/claude-percent-input";
+import PercentageInput from "@/components/bruteforcepercent";
 
 
 
@@ -122,10 +123,7 @@ export default function Home() {
           <div>
             <div>
               <Heading title="Discounts (%):"/>
-            </div>
-            <div>
-              <PercentInput key="discountspercent" jotVal={discountPercent} jotSet={setDiscPercent}/>
-              <ClaudePercentageInput/>
+              <PercentageInput jotSet={setDiscPercent} />
             </div>
           </div>
           <div>

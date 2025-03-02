@@ -8,7 +8,7 @@ export default function Page() {
     return (
         <div>
             <PercentageInput  />
-            <PercentInput  />
+            <PercentInput jotSet={null} />
         </div>
     )
 }

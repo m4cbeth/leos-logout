@@ -4,13 +4,14 @@ import { Input } from "./ui/input"
 import { useState } from "react"
 
 
-export default function PercentInput() {
+export default function PercentageInput({jotSet}) {
 
     const [input, setInput] = useState("")
 
     const handleFocus = () => {
         if (input == "") {
             setInput("0.00%")
+            jotSet(input)
         }
     }
 
@@ -22,13 +23,12 @@ export default function PercentInput() {
             const backspaced = current.slice(0,current.length-1).join("")
             const numericValue = parseFloat(backspaced) / 100
             const percent = `${numericValue.toFixed(2)}%`
-            console.log({current, backspaced, numericValue, percent})
             setInput(percent)
+            jotSet(input)
+
             return
         }
     }
-
-    const formattedInput = `${(parseInt(input) / 100).toFixed(2)}%`
 
     const handleChange = (e) => {
         const val = e.target.value
@@ -46,11 +46,12 @@ export default function PercentInput() {
     return (
         <Input
             placeholder="0.00%"
-            onKeyDown={handleKeyDown}
             inputMode="numeric"
+            onKeyDown={handleKeyDown}
             value={input}
             onFocus={handleFocus}
             onChange={handleChange}
+            className="font-thin"
         />
     )
 }
