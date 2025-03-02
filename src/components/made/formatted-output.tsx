@@ -1,5 +1,6 @@
 "use client"
 
+import { useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { useAtomValue } from "jotai"
 import * as atoms from "@/app/atoms"
@@ -10,6 +11,7 @@ import { CurrencyDisplay } from "../currency-display";
 export function FormattedLogout() {
     const todaysDate = useAtomValue(atoms.dateAtom)
     const shift = useAtomValue(atoms.shiftAtom)
+    const reportTime = useAtomValue(atoms.reportTimeAtom)
     const sales = useAtomValue(atoms.salesAtom)
     const foodSales = useAtomValue(atoms.foodSalesAtom)
     const takeout = useAtomValue(atoms.takeoutAtom)
@@ -36,10 +38,33 @@ export function FormattedLogout() {
     const maintenance = useAtomValue(atoms.maintenanceAtom)
     const fohCutTimes = useAtomValue(atoms.fohCutTimesAtom)
 
+    const outputRef = useRef(null)
+
+    const copyToPostText = () => {
+
+
+        const range = document.createRange()
+        const selection = window.getSelection()
+        range.selectNodeContents(outputRef.current)
+        selection?.removeAllRanges()
+        selection?.addRange(range)
+        
+        document.execCommand("copy")
+
+        selection.removeAllRanges()
+    
+    
+        // const div = document.getElementById("output")
+        // if (div) {
+        //   navigator.clipboard.writeText(div.innerHTML)
+        // }
+        // alert("Copied! Now go post and have a great night!")
+    }
+
     return (
         <div className="formatted-output-block font-thin">
           <Button variant="outline" onClick={copyToPostText} className="my-3 w-full">Copy</Button>
-          <div id="output" className=" p-1 m-1 text-sm">
+          <div ref={outputRef} id="output" className=" p-1 m-1 text-sm">
            
             DATE: {todaysDate?.toDateString()}
             <DoubleBreak />
@@ -47,7 +72,7 @@ export function FormattedLogout() {
             SHIFT: {shift} 
             <DoubleBreak />
             
-            REPORT PRINTED AT: {shift} 
+            REPORT PRINTED AT: {reportTime} 
             <DoubleBreak />
             
             SALES: <CurrencyDisplay key={'sales'} amount={sales} />
@@ -166,24 +191,13 @@ const Listify = ({jotVal}) => (
   </>
 )
 
+
 const ListCircles = ({children}) => (
   <ul className="list-[circle] ml-10">
     {children}
   </ul>
 )
 
-
-
-
 const DoubleBreak = () => <><br /><br /></>
 
-
-
-const copyToPostText = () => {
-    const div = document.getElementById("output")
-    if (div) {
-      navigator.clipboard.writeText(div.innerText)
-    }
-    // alert("Copied! Now go post and have a great night!")
-  }
   
