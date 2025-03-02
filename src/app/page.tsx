@@ -1,12 +1,11 @@
 "use client"
 
 import { useState } from "react";
-import { useAtom } from "jotai";
+import { useAtom, useSetAtom } from "jotai";
 import * as atoms from "@/app/atoms"
 import { DatePicker } from "@/components/made/datepicker";
 import { Button } from "@/components/ui/button";
 import CurrencyInput from "@/components/currency-input";
-import PercentInput from "@/components/percent-input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Textarea } from "@/components/ui/textarea"
 import { ManagerDiscountDisplay, ManagerDiscountEntry } from "@/components/made/manager-discount";
@@ -16,7 +15,6 @@ import { FormattedLogout } from "@/components/made/formatted-output";
 import { BOHDiscountDisplay, BOHDiscountEntry } from "@/components/made/BOH-discount";
 import { Heading } from "@/components/helpers";
 import OtherDiscounts from "@/components/made/other-discounts";
-import { ClaudePercentageInput } from "@/components/made/claude-percent-input";
 import PercentageInput from "@/components/bruteforcepercent";
 
 
@@ -29,7 +27,7 @@ export default function Home() {
   const [sales, setSales] = useAtom(atoms.salesAtom)
   const [foodSales, setFoodSales] = useAtom(atoms.foodSalesAtom)
   const [discountsAmount, setDiscAmount] = useAtom(atoms.discountsAmountAtom)
-  const [discountPercent, setDiscPercent] = useAtom(atoms.discountsPercentAtom)
+  const [undefined, setDiscPercent] = useAtom(atoms.discountsPercentAtom)
   const [takeout, setTakeout] = useAtom(atoms.takeoutAtom)
   const [promoTotal, setPromoTotal] = useAtom(atoms.promoTotalAtom)
   const [float, setFloat] = useAtom(atoms.floatAtom)
@@ -91,7 +89,7 @@ export default function Home() {
           </div>
           <div>
             <Heading title={'Report printed at:'}></Heading>
-            <Input key={'report'} value={reportTime} onChangeValue={setReportTime} placeholder="Enter report time"/>
+            <Input className="font-thin" key={'report'} value={reportTime} onChangeValue={setReportTime} placeholder="Enter report time"/>
           </div>
           <div className="flex flex-col my-2 justify-between">
             <div>

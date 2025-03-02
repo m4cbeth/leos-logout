@@ -37,7 +37,7 @@ export function FormattedLogout() {
     const fohCutTimes = useAtomValue(atoms.fohCutTimesAtom)
 
     return (
-        <div className="formatted-output-block">
+        <div className="formatted-output-block font-thin">
           <Button variant="outline" onClick={copyToPostText} className="my-3 w-full">Copy</Button>
           <div id="output" className=" p-1 m-1 text-sm">
            

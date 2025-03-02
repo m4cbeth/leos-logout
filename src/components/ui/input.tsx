@@ -12,7 +12,6 @@ React.ComponentProps<"input"> & {
   ({ className, jotSet, onChangeValue, value, type, ...props }, ref) => {
 
     const handleClear = () => {
-      console.log('click')
       onChangeValue?.("")
       jotSet?.([])
     }
