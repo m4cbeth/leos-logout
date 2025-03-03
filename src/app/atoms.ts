@@ -2,15 +2,16 @@ import { atom, useSetAtom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
 
 // Helper function to handle doing a logout after midnight
-const getAdjustedDate = () => {
-  const now = new Date();
-  if (now.getHours() < 6) {
-    now.setDate(now.getDate() - 1);
-  }
-  return now
-}
+// const getAdjustedDate = () => {
+//   const now = new Date();
+//   if (now.getHours() < 6) {
+//     now.setDate(now.getDate() - 1);
+//   }
+//   return now
+// }
 
-export const dateAtom = atom(getAdjustedDate());
+// export const dateAtom = atom(getAdjustedDate());
+export const dateAtom = atom<Date>();
 export const shiftAtom = atomWithStorage("shift", "Day", undefined, { getOnInit: true });
 export const reportTimeAtom = atomWithStorage("reportTime", "", undefined, { getOnInit: true });
 export const salesAtom = atomWithStorage("sales", 0, undefined, { getOnInit: true });
@@ -74,7 +75,7 @@ export const useResetAllAtoms = () => {
   const setFohCutTimes = useSetAtom(fohCutTimesAtom);
 
   return () => {
-    setDate(getAdjustedDate());
+    setDate(null);
     setShift("Day");
     setReportTime("");
     setSales(0);
