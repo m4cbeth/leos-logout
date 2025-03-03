@@ -79,7 +79,7 @@ export default function Home() {
               Shift:
             </div>
             <div className="ml-5">
-              <Tabs defaultValue="Day" value={shift} onValueChange={setShift}>
+              <Tabs value={shift} onValueChange={setShift}>
                 <TabsList>
                   <TabsTrigger value="Day">Day</TabsTrigger>
                   <TabsTrigger value="Night">Night</TabsTrigger>
