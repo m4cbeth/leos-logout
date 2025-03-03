@@ -1,14 +1,24 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { useAtomValue } from "jotai"
 import * as atoms from "@/app/atoms"
 import { EightySixList } from "./eighty-six-list";
 import { CurrencyDisplay } from "../currency-display";
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+  } from "@/components/ui/tooltip"
+  
 
 
 export function FormattedLogout() {
+
+    const [copied, setCopied] = useState(false)
+    
     const todaysDate = useAtomValue(atoms.dateAtom)
     const shift = useAtomValue(atoms.shiftAtom)
     const reportTime = useAtomValue(atoms.reportTimeAtom)
@@ -42,28 +52,42 @@ export function FormattedLogout() {
 
     const copyToPostText = () => {
 
-
         const range = document.createRange()
         const selection = window.getSelection()
         range.selectNodeContents(outputRef.current)
         selection?.removeAllRanges()
-        selection?.addRange(range)
-        
+        selection?.addRange(range)        
         document.execCommand("copy")
-
         selection.removeAllRanges()
-    
-    
-        // const div = document.getElementById("output")
-        // if (div) {
-        //   navigator.clipboard.writeText(div.innerHTML)
-        // }
-        // alert("Copied! Now go post and have a great night!")
+        setCopied(true)
+        setTimeout(() => setCopied(false), 1500)
     }
+
+
+    const CopyButton = () => (
+        <TooltipProvider>
+            <Tooltip open={copied}>
+                <TooltipTrigger asChild>
+                    <Button variant="outline" onClick={copyToPostText} className="my-3 w-full">Copy</Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                    <p>Copied!</p>
+                </TooltipContent>
+            </Tooltip>
+        </TooltipProvider>
+    )
 
     return (
         <div className="formatted-output-block font-thin">
-          <Button variant="outline" onClick={copyToPostText} className="my-3 w-full">Copy</Button>
+            <CopyButton />
+
+
+
+
+
+
+
+
           <div ref={outputRef} id="output" className=" p-1 m-1 text-sm">
            
             DATE: {todaysDate?.toDateString()}
@@ -180,7 +204,16 @@ export function FormattedLogout() {
             ▪︎ {fohCutTimes}
             <DoubleBreak/>
         </div>
-        <Button variant="outline" onClick={copyToPostText} className="my-3 w-full">Copy</Button>
+        
+
+
+
+                <CopyButton />
+
+
+
+
+
     </div>
     )
 }
