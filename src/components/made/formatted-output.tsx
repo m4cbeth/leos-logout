@@ -38,9 +38,9 @@ export function FormattedLogout() {
     const NBH = useAtomValue(atoms.NBHAtom)
     const owners = useAtomValue(atoms.ownersAtom)
     const trainingDiscounts = useAtomValue(atoms.trainingDiscountsAtom)
-    // const pintCard = useAtomValue(atoms.pintCardAtom)
-    // const pickleCard = useAtomValue(atoms.pickleCardAtom)
-    // const teamNacho = useAtomValue(atoms.teamNachoAtom)
+    const pintCard = useAtomValue(atoms.pintCardAtom)
+    const pickleCard = useAtomValue(atoms.pickleCardAtom)
+    const teamNacho = useAtomValue(atoms.teamNachoAtom)
     // const guestSatisfaction = useAtomValue(atoms.guestSatisfactionAtom)
     const promoDesc = useAtomValue(atoms.promoDescAtom)
     const deletes = useAtomValue(atoms.deletesAtom)
@@ -137,9 +137,6 @@ export function FormattedLogout() {
             <DoubleBreak />
             ▪︎ 
 
-            {/* <ManagerDiscountDisplay />
-            <DoubleBreak /> */}
-
             <h2 className="mt-5">DISCOUNTS</h2>
             <ul className="list-disc ml-10">
                 <li>Manager on shift (x100, x50)
@@ -177,9 +174,26 @@ export function FormattedLogout() {
                         <Listify jotVal={trainingDiscounts} />
                     </ListCircles>
                 </li>
+                <li>Pint/Pickle cards/Team nachos (amount of cards/orders)
+                    <ListCircles>
+                        <li>                            
+                            Pint Cards: {pintCard}
+                        </li>
+                        <li>                            
+                            Pickle Cards: {pickleCard}
+                        </li>
+                        <li>                            
+                            Team Nachos: {teamNacho}
+                        </li>
+                    </ListCircles>
+                </li>
             </ul>
 
-            <div className="mt-3 mb-0">PROMO:</div>
+
+
+            <div className="mt-3 mb-0">
+            PROMO:
+            </div>
             <br />
             ▪︎ {promoDesc} heyydl
             <DoubleBreak/>
