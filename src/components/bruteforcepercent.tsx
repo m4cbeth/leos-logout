@@ -41,6 +41,7 @@ export default function PercentageInput({jotSet}) {
         const numericValue = parseFloat(numbers) / 100
         const percent = `${numericValue.toFixed(2)}%`
         setInput(percent)
+        jotSet(percent)
         }
 
     return (

@@ -110,7 +110,7 @@ export function FormattedLogout() {
             
             DISCOUNT TOTAL: <CurrencyDisplay key={'discountsAmount'} amount={discountsAmount} />
             {` | `}
-            {(discountPercent*100).toFixed(2)}%
+            {discountPercent}
             <DoubleBreak />
             
             PROMO TOTAL: <CurrencyDisplay key={'promo'} amount={promo} />
