@@ -2,7 +2,6 @@ import * as React from "react"
 import { cn } from "@/lib/utils"
 import { X } from "lucide-react"
 
-
 const Input = React.forwardRef<HTMLInputElement, 
 React.ComponentProps<"input"> & {
   onChangeValue?: (value: string) => void;
@@ -10,22 +9,46 @@ React.ComponentProps<"input"> & {
 }
 >(
   ({ className, jotSet, onChangeValue, value, type, ...props }, ref) => {
-
+    // Create our own internal ref
+    const internalRef = React.useRef<HTMLInputElement>(null)
+    
+    // Handle both object and function refs
+    const handleRef = React.useMemo(() => {
+      if (!ref) {
+        return internalRef
+      }
+      
+      return ref
+    }, [ref])
+    
     const handleClear = () => {
       onChangeValue?.("")
       jotSet?.([])
+      // Use our internal ref for focus
+      internalRef.current?.focus()
     }
+    
     return (
       <div className="relative w-full">
         <input
           type={type}
           value={value}
           className={cn(
-            "  my-1    font-thin       flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+            "my-1 font-thin flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
             className
           )}
-          ref={ref}
-          onChange={(e) => onChangeValue?.(e.target.value)} // Calls the callback with new value
+          ref={(node) => {
+            // Update our internal ref
+            internalRef.current = node
+            
+            // Forward to the provided ref
+            if (typeof ref === 'function') {
+              ref(node)
+            } else if (ref) {
+              ref.current = node
+            }
+          }}
+          onChange={(e) => onChangeValue?.(e.target.value)}
           {...props}
         />
         <button
