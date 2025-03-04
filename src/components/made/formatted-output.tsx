@@ -12,6 +12,7 @@ import {
     TooltipProvider,
     TooltipTrigger,
   } from "@/components/ui/tooltip"
+import { GuestSatisfactionDisplay } from "./guest-satisfaction"
   
 
 
@@ -186,6 +187,10 @@ export function FormattedLogout() {
                             Team Nachos: {teamNacho}
                         </li>
                     </ListCircles>
+                </li>
+                <li>
+                    Guest Satisfaction (% and reason)
+                        <GuestSatisfactionDisplay/>
                 </li>
             </ul>
 

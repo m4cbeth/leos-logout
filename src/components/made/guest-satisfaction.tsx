@@ -22,7 +22,7 @@ export function GuestSatisfactionDisplay () {
   return discounts.length > 0 && (
     <ul className="font-thin">
       {discounts.map((item) => (
-        <li className=" ml-8 list-disc" key={item}>{item}</li>
+        <li className=" ml-10 list-[circle]" key={item}>{item}</li>
       ))}
     </ul>
   )
