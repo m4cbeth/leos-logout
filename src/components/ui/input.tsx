@@ -12,14 +12,14 @@ React.ComponentProps<"input"> & {
     // Create our own internal ref
     const internalRef = React.useRef<HTMLInputElement>(null)
     
-    // Handle both object and function refs
-    const handleRef = React.useMemo(() => {
-      if (!ref) {
-        return internalRef
-      }
+    // // Handle both object and function refs
+    // const handleRef = React.useMemo(() => {
+    //   if (!ref) {
+    //     return internalRef
+    //   }
       
-      return ref
-    }, [ref])
+    //   return ref
+    // }, [ref])
     
     const handleClear = () => {
       onChangeValue?.("")
