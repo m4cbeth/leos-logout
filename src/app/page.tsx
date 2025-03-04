@@ -122,7 +122,7 @@ export default function Home() {
           <div>
             <div>
               <Heading title="Discounts (%):"/>
-              <PercentageInput jotSet={setDiscPercent} />
+              <PercentageInput jotVal={discPercent} jotSet={setDiscPercent} />
             </div>
           </div>
           <div>

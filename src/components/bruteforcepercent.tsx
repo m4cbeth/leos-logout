@@ -4,9 +4,9 @@ import { Input } from "./ui/input"
 import { useState } from "react"
 
 
-export default function PercentageInput({jotSet}) {
+export default function PercentageInput({jotSet, jotVal}) {
 
-    const [input, setInput] = useState("")
+    const [input, setInput] = useState(jotVal || "")
 
     const handleFocus = () => {
         if (input == "") {
