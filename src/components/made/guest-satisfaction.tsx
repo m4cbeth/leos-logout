@@ -14,6 +14,7 @@ import { Input } from "@/components/ui/input"
 import { useState } from "react"
 import { guestSatisfactionAtom } from "@/app/atoms"
 import { useAtom, useAtomValue } from "jotai"
+import { Heading } from "../helpers"
 
 export function GuestSatisfactionDisplay () {
   const discounts = useAtomValue(guestSatisfactionAtom)
@@ -21,7 +22,7 @@ export function GuestSatisfactionDisplay () {
   return discounts.length > 0 && (
     <ul className="font-thin">
       {discounts.map((item) => (
-        <li key={item}>- {item}</li>
+        <li className=" ml-8 list-disc" key={item}>{item}</li>
       ))}
     </ul>
   )
@@ -36,7 +37,7 @@ export function GuestSatisfaction() {
 
   const addDiscount = () => {
     const newState = [...discounts]
-    newState.push(`${employeeName} ${percent}`)
+    newState.push(`${discountReason}, ${percent}: ${employeeName}`)
     setDiscounts(newState)
     setPercent(null)
     setName("")
@@ -45,37 +46,31 @@ export function GuestSatisfaction() {
 
   return (
     <div>
-      <div className="flex gap-3 items-center">
-          <Input placeholder="Server:"
-              value={employeeName}
-              onChangeValue={setName}
-              className="mr-5"
-          />
-          <Input placeholder="Guest Satisfaction Reason:"
-              value={discountReason}
-              onChangeValue={setDiscountReason}
-              className="mr-5"
-          />
-          <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                  <Button variant="outline">{percent || "Percent"}</Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56">
-                  <DropdownMenuLabel>Guest Satisfaction Percent:</DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuRadioGroup value={percent} onValueChange={setPercent}>
-                  <DropdownMenuRadioItem value="10%">10%</DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="15%">15%</DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="25%">25%</DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="50%">50%</DropdownMenuRadioItem>
-                  <DropdownMenuRadioItem value="100%">100%</DropdownMenuRadioItem>
-                  </DropdownMenuRadioGroup>
-              </DropdownMenuContent>
-          </DropdownMenu>
-      </div>
-      <Button onClick={addDiscount} type="button" variant="secondary" className="my-1 w-full">
+        <Heading title={'Guest Satisfaction'} />
+        <GuestSatisfactionDisplay />        
+            <Input placeholder="Guest Satisfaction Reason:" value={discountReason} onChangeValue={setDiscountReason} className="mr-5" />
+        <div className="flex gap-3 items-center">
+            <Input placeholder="Server:" value={employeeName} onChangeValue={setName} className="mr-5" />
+            <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                    <Button variant="outline">{percent || "Percent"}</Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-56">
+                    <DropdownMenuLabel>Guest Satisfaction Percent:</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuRadioGroup value={percent} onValueChange={setPercent}>
+                    <DropdownMenuRadioItem value="10%">10%</DropdownMenuRadioItem>
+                    <DropdownMenuRadioItem value="15%">15%</DropdownMenuRadioItem>
+                    <DropdownMenuRadioItem value="25%">25%</DropdownMenuRadioItem>
+                    <DropdownMenuRadioItem value="50%">50%</DropdownMenuRadioItem>
+                    <DropdownMenuRadioItem value="100%">100%</DropdownMenuRadioItem>
+                    </DropdownMenuRadioGroup>
+                </DropdownMenuContent>
+            </DropdownMenu>
+        </div>
+        <Button onClick={addDiscount} type="button" variant="secondary" className="my-1 w-full">
             Add Guest Satisfaction
-      </Button>
+        </Button>
     </div>
   )
 }

@@ -18,6 +18,7 @@ import OtherDiscounts from "@/components/made/other-discounts";
 import PercentageInput from "@/components/bruteforcepercent";
 import PintPickleNachos from "@/components/made/pint-pickle-nacho";
 import { ResetDialog } from "@/components/made/reset-dialog";
+import { GuestSatisfaction } from "@/components/made/guest-satisfaction";
 
 
 
@@ -177,10 +178,8 @@ export default function Home() {
             <PintPickleNachos />
           </div>
           <div>
-            {/* Guest Satisfaction (% and reason) */}            
+            <GuestSatisfaction />    
           </div>
-
-
           <div>
             <Heading title={'Promo'}/>
             <Textarea value={promoDesc} onChangeValue={setPromoDesc} placeholder="Describe the promos"/>
@@ -227,17 +226,3 @@ export default function Home() {
     </div>
   );
 }
-
-
-
-const ResetButton = () => {
-  const resetAll = atoms.useResetAllAtoms()
-  return (
-    <Button onClick={resetAll} className="text-5xl font-black text-black w-full h-full" variant="destructive">
-          RESET FORM
-    </Button>
-  )
-}
-
-
-
