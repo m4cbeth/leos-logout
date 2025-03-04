@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
 import { useState } from "react"
-
 import { BOHDiscountAtom } from "@/app/atoms"
 import { useAtom, useAtomValue } from "jotai"
 
@@ -71,4 +70,3 @@ export function BOHDiscountEntry() {
     </div>
   )
 }
-
