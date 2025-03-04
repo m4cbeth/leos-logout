@@ -32,9 +32,9 @@ export const staffOffShiftAtom = atomWithStorage("staffOffShift", [], undefined,
 export const NBHAtom = atomWithStorage("NBH", [], undefined, { getOnInit: true });
 export const ownersAtom = atomWithStorage("owners", [], undefined, { getOnInit: true });
 export const trainingDiscountsAtom = atomWithStorage("trainingDiscounts", [], undefined, { getOnInit: true });
-export const pintCardAtom = atomWithStorage("pintCard", [], undefined, { getOnInit: true });
-export const pickleCardAtom = atomWithStorage("pickleCard", [], undefined, { getOnInit: true });
-export const teamNachoAtom = atomWithStorage("teamNacho", [], undefined, { getOnInit: true });
+export const pintCardAtom = atomWithStorage("pintCard", "", undefined, { getOnInit: true });
+export const pickleCardAtom = atomWithStorage("pickleCard", "", undefined, { getOnInit: true });
+export const teamNachoAtom = atomWithStorage("teamNacho", "", undefined, { getOnInit: true });
 export const guestSatisfactionAtom = atomWithStorage("guestSatisfaction", [], undefined, { getOnInit: true });
 export const promoDescAtom = atomWithStorage("promoDesc", "", undefined, { getOnInit: true });
 export const deletesAtom = atomWithStorage("deletes", "", undefined, { getOnInit: true });
@@ -96,9 +96,9 @@ export const useResetAllAtoms = () => {
     setNBH([]);
     setOwners([]);
     setTrainingDiscounts([]);
-    setPintCard([]);
-    setPickleCard([]);
-    setTeamNacho([]);
+    setPintCard('');
+    setPickleCard('');
+    setTeamNacho('');
     setGuestSatisfaction([]);
     setPromoDesc("");
     setDeletes("");

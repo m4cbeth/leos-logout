@@ -16,6 +16,8 @@ import { BOHDiscountDisplay, BOHDiscountEntry } from "@/components/made/BOH-disc
 import { Heading } from "@/components/helpers";
 import OtherDiscounts from "@/components/made/other-discounts";
 import PercentageInput from "@/components/bruteforcepercent";
+import PintPickleNachos from "@/components/made/pint-pickle-nacho";
+
 
 
 
@@ -41,6 +43,7 @@ export default function Home() {
   const [waste, setWaste] = useAtom(atoms.wasteAtom)
   const [maintenance, setMaintenance] = useAtom(atoms.maintenanceAtom)
   const [fohCutTimes, setFohCutTimes] = useAtom(atoms.fohCutTimesAtom)
+
 
   const add86 = () => {
     const new86Items = [...eightySixItems]
@@ -88,8 +91,8 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <Heading title={'Report printed at:'}></Heading>
-            <Input className="font-thin" key={'report'} value={reportTime} onChangeValue={setReportTime} placeholder="Enter report time"/>
+            <Heading title={'Report printed at:'} />
+            <Input value={reportTime} onChangeValue={setReportTime} placeholder="Enter report time"/>
           </div>
           <div className="flex flex-col my-2 justify-between">
             <div>
@@ -120,10 +123,8 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <div>
-              <Heading title="Discounts (%):"/>
-              <PercentageInput jotVal={discPercent} jotSet={setDiscPercent} />
-            </div>
+            <Heading title="Discounts (%):"/>
+            <PercentageInput jotVal={discPercent} jotSet={setDiscPercent} />
           </div>
           <div>
             <Heading title="Promos"/>
@@ -169,11 +170,13 @@ export default function Home() {
             <OtherDiscounts />            
           </div>
           <div>
-            {/* Pint / pickle */}
+            <PintPickleNachos />
           </div>
           <div>
-            {/* Guest Satisfaction (% and reason) */}
+            {/* Guest Satisfaction (% and reason) */}            
           </div>
+
+
           <div>
             <Heading title={'Promo'}/>
             <Textarea value={promoDesc} onChangeValue={setPromoDesc} placeholder="Describe the promos"/>
