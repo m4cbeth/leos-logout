@@ -17,6 +17,7 @@ import { Heading } from "@/components/helpers";
 import OtherDiscounts from "@/components/made/other-discounts";
 import PercentageInput from "@/components/bruteforcepercent";
 import PintPickleNachos from "@/components/made/pint-pickle-nacho";
+import { ResetDialog } from "@/components/made/reset-dialog";
 
 
 
@@ -58,8 +59,11 @@ export default function Home() {
   return (
     <div className="items-center justify-items-center min-h-screen p-5  max-w-lg mx-auto font-[family-name:var(--font-geist-sans)]">
       
-      <main className="flex justify-center mb-36 mt-1 border w-full p-3 justify-items-center flex-col gap-8 row-start-2 sm:items-start">
+      <main className=" relative  flex justify-center mb-36 mt-1 border w-full p-3 justify-items-center flex-col gap-8 row-start-2 sm:items-start">
         <h1 className="self-center text-2xl font-thin">Leo&apos;s Logout</h1>
+        <div className="absolute top-3 right-3">
+          <ResetDialog />
+        </div>
 
 
     <Tabs defaultValue="input" className="w-full">
@@ -212,25 +216,7 @@ export default function Home() {
                   
 
       </TabsContent>
-      <div className="  
-        font-black
-        text-outline
-        text-red-700
-        text-5xl
-        italic
-        flex items-center justify-center 
-        h-[33vh] 
-        mb-5
-        bg-[url('/dangerzone.webp')]">
-        DANGERZONE
-      </div>
-
-      <div className="
-        h-[33vh]
-
-      ">
-        <ResetButton />
-      </div>
+      
 
     </Tabs>
       </main>
