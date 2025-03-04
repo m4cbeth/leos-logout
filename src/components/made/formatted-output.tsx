@@ -139,7 +139,7 @@ export function FormattedLogout() {
             ▪︎ 
 
             <h2 className="mt-5">DISCOUNTS</h2>
-            <ul className="list-disc ml-10">
+            <ul className="list-disc ml-7">
                 <li>Manager on shift (x100, x50)
                     <ListCircles>
                         <Listify jotVal={managerDiscounts} />
@@ -245,7 +245,7 @@ const Listify = ({jotVal}) => (
 
 
 const ListCircles = ({children}) => (
-  <ul className="list-[circle] ml-10">
+  <ul className="list-[circle] ml-7">
     {children}
   </ul>
 )
