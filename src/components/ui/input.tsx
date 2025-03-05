@@ -53,10 +53,10 @@ React.ComponentProps<"input"> & {
         />
         <button
           type="button"
-          className="absolute right-2 top-1/2 transform -translate-y-1/2 rounded-full bg-slate-800 p-1 hover:bg-slate-700 focus:outline-none"
+          className="absolute right-2 top-1/2 transform -translate-y-1/2 rounded-full border dark:bg-slate-800  p-1 hover:bg-slate-700 focus:outline-none"
           onClick={handleClear}
         >
-          <X className="h-3 w-3 text-white"></X>
+          <X className="h-3 w-3 text-black dark:text-white"></X>
         </button>
       </div>
     )
