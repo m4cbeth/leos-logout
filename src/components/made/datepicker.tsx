@@ -36,6 +36,7 @@ export function DatePicker() {
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0">
         <Calendar
+          toDate={new Date()} // disable future
           mode="single"
           selected={date}
           onSelect={(selectedDate) => {
