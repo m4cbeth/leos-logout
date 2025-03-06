@@ -28,6 +28,10 @@ export default function EightSixEntry() {
   const inputRef = useRef(null)
   
   const add86 = () => {
+    if (eightySixToAdd === "") {
+      inputRef.current.focus()
+      return
+    }
     const new86Items = [...eightySixItems]
     new86Items.push(eightySixToAdd)
     set86Items(new86Items)

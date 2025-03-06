@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Heading } from "@/components/helpers";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button"
@@ -48,12 +48,18 @@ function Entry({
   }) {
     const [jotVal, jotSet] = useAtom<string[]>(atom);
     const [entry, setEntry] = useState("");
+    const inputRef = useRef(null)
+    const focus = () => inputRef.current.focus()
 
     const addDiscount = () => {
-        if (!entry) return
+        if (!entry) {
+            focus()
+            return
+        }
         const newState = (Array.isArray(jotVal) ? [...jotVal, entry] : [entry])
         jotSet(newState)
         setEntry("")
+        focus()
     }
 
     const DiscountsDisplay = () => (
@@ -72,6 +78,7 @@ function Entry({
             <DiscountsDisplay />
             <Input  
                 value={entry}
+                ref={inputRef}
                 onChangeValue={setEntry}
                 className="mr-5"
                 placeholder={placeholder}

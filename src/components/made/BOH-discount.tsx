@@ -13,7 +13,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { BOHDiscountAtom } from "@/app/atoms"
 import { useAtom, useAtomValue } from "jotai"
 
@@ -33,19 +33,27 @@ export function BOHDiscountEntry() {
   const [percent, setPercent] = useState(null)
   const [employeeName, setName] = useState("")
   const [discounts, setDiscounts] = useAtom(BOHDiscountAtom)
+  const inputRef = useRef(null)
+  const focus = () => inputRef.current.focus()
 
   const addDiscount = () => {
+    if (!percent || !employeeName) {
+      focus()
+      return
+    }
     const newState = [...discounts]
     newState.push(`${employeeName} ${percent}`)
     setDiscounts(newState)
     setPercent(null)
     setName("")
+    focus()
   }
 
   return (
     <div>
       <div className="flex gap-3 items-center">
           <Input placeholder="Employee's Name"
+              ref={inputRef}
               value={employeeName}
               onChangeValue={setName}
               className="mr-5"
