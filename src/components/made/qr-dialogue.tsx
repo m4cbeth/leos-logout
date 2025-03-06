@@ -27,7 +27,7 @@ export function QRCodeDialogue() {
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4 mx-auto">
-          <Image alt="QR Code" width={400} height={400} src="/leos-logout-qrcode.png"/>
+          <Image priority alt="QR Code" width={400} height={400} src="/leos-logout-qrcode.png"/>
         </div>
         <DialogFooter>
           <DialogClose asChild>
