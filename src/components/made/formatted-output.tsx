@@ -32,6 +32,7 @@ export function FormattedLogout() {
     const float = useAtomValue(atoms.floatAtom)
     const flow = useAtomValue(atoms.flowAtom)
     const issues = useAtomValue(atoms.issuesAtom)
+    const takeoutIssues = useAtomValue(atoms.takeoutIssuesAtom)
     const managerDiscounts = useAtomValue(atoms.managerDiscountsAtom)
     const BOHDiscount = useAtomValue(atoms.BOHDiscountAtom)
     const FOHonShift = useAtomValue(atoms.FOHonShiftAtom)
@@ -42,7 +43,6 @@ export function FormattedLogout() {
     const pintCard = useAtomValue(atoms.pintCardAtom)
     const pickleCard = useAtomValue(atoms.pickleCardAtom)
     const teamNacho = useAtomValue(atoms.teamNachoAtom)
-    // const guestSatisfaction = useAtomValue(atoms.guestSatisfactionAtom)
     const promoDesc = useAtomValue(atoms.promoDescAtom)
     const deletes = useAtomValue(atoms.deletesAtom)
     const waste = useAtomValue(atoms.wasteAtom)
@@ -136,7 +136,7 @@ export function FormattedLogout() {
 
             TAKE OUT FLOW/DOWNTIMES/PAUSES/COMMENTS:
             <DoubleBreak />
-            ▪︎ 
+            ▪︎ {takeoutIssues}
 
             <h2 className="mt-5">DISCOUNTS</h2>
             <ul className="list-disc ml-7">
@@ -200,7 +200,7 @@ export function FormattedLogout() {
             PROMO:
             </div>
             <br />
-            ▪︎ {promoDesc} heyydl
+            ▪︎ {promoDesc}
             <DoubleBreak/>
 
             DELETES:

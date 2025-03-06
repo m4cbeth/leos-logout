@@ -55,8 +55,8 @@ export const useResetAllAtoms = () => {
   const setFloat = useSetAtom(floatAtom);
   const setFlow = useSetAtom(flowAtom);
   const setIssues = useSetAtom(issuesAtom);
-  const setTakeoutIssues = useSetAtom(takeoutIssuesAtom);
   const setEightySix = useSetAtom(eightySixAtom);
+  const setTakeoutIssues = useSetAtom(takeoutIssuesAtom);
   const setManagerDiscounts = useSetAtom(managerDiscountsAtom);
   const setBOHDiscount = useSetAtom(BOHDiscountAtom);
   const setFOHonShift = useSetAtom(FOHonShiftAtom);
@@ -89,6 +89,7 @@ export const useResetAllAtoms = () => {
     setIssues("");
     setTakeoutIssues("");
     setEightySix([]);
+
     setManagerDiscounts([]);
     setBOHDiscount([]);
     setFOHonShift([]);
