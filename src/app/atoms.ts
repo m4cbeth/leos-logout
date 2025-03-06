@@ -89,7 +89,6 @@ export const useResetAllAtoms = () => {
     setIssues("");
     setTakeoutIssues("");
     setEightySix([]);
-
     setManagerDiscounts([]);
     setBOHDiscount([]);
     setFOHonShift([]);
