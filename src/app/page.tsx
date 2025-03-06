@@ -1,16 +1,14 @@
 "use client"
 
-import { useState } from "react";
 import { useAtom } from "jotai";
 import * as atoms from "@/app/atoms"
 import { DatePicker } from "@/components/made/datepicker";
-import { Button } from "@/components/ui/button";
 import CurrencyInput from "@/components/currency-input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Textarea } from "@/components/ui/textarea"
 import { ManagerDiscountDisplay, ManagerDiscountEntry } from "@/components/made/manager-discount";
 import { Input } from "@/components/ui/input";
-import { EightySixList } from "@/components/made/eighty-six-list";
+import EightSixEntry from "@/components/made/eighty-six";
 import { FormattedLogout } from "@/components/made/formatted-output";
 import { BOHDiscountDisplay, BOHDiscountEntry } from "@/components/made/BOH-discount";
 import { Heading } from "@/components/helpers";
@@ -37,8 +35,6 @@ export default function Home() {
   const [float, setFloat] = useAtom(atoms.floatAtom)
   const [flow, setFlow] = useAtom(atoms.flowAtom)
   const [issues, setIssues] = useAtom(atoms.issuesAtom)
-  const [eightySixToAdd, set86] = useState("")
-  const [eightySixItems, set86Items] = useAtom(atoms.eightySixAtom)
   const [takeoutIssues, setTakeoutIssues] = useAtom(atoms.takeoutIssuesAtom)
   const [promoDesc, setPromoDesc] = useAtom(atoms.promoDescAtom)
   const [deletes, setDeletes] = useAtom(atoms.deletesAtom)
@@ -47,13 +43,7 @@ export default function Home() {
   const [fohCutTimes, setFohCutTimes] = useAtom(atoms.fohCutTimesAtom)
 
 
-  const add86 = () => {
-    const new86Items = [...eightySixItems]
-    new86Items.push(eightySixToAdd)
-    set86Items(new86Items)
-    set86("")
-  }
-
+ 
 
 
 
@@ -146,14 +136,7 @@ export default function Home() {
                 <Textarea value={issues} onChangeValue={setIssues} placeholder="Describe how the service went." />
               </div>
               <div>
-                <Heading title="86'd" />
-                <EightySixList />
-                <Input placeholder="Out of Stock Product"
-                  value={eightySixToAdd}
-                  onChangeValue={set86} />
-                <Button onClick={add86} type="button" variant="secondary" className="w-full">
-                  Add 86&apos;d Item
-                </Button>
+                <EightSixEntry />
               </div>
               <div>
                 <Heading title={'Takeout flow/Downtimes/Pauses/Comments'} />

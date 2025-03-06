@@ -4,7 +4,7 @@ import { useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { useAtomValue } from "jotai"
 import * as atoms from "@/app/atoms"
-import { EightySixList } from "./eighty-six-list";
+import { EightySixList } from "./eighty-six";
 import { CurrencyDisplay } from "../currency-display";
 import {
     Tooltip,
