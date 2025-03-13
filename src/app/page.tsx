@@ -51,7 +51,7 @@ export default function Home() {
     <div className="items-center justify-items-center min-h-screen p-5  max-w-lg mx-auto font-[family-name:var(--font-geist-sans)]">
       
       <main className=" relative  flex justify-center mb-36 mt-1 border w-full p-3 justify-items-center flex-col gap-8 row-start-2 sm:items-start">
-        <h1 className="self-center text-2xl font-thin">Leo&apos;s Logout</h1>
+        <h1 className="self-center text-2xl dark:font-thin">Leo&apos;s Logout</h1>
         <div className="absolute top-3 right-3">
           <ResetDialog />
         </div>
@@ -99,7 +99,7 @@ export default function Home() {
                 <div>
                   <Heading title="Food Sales (excl. discounts):" />
                 </div>
-                <div  className="font-thin">
+                <div  className="">
                   <CurrencyInput key="food" jotVal={foodSales} jotSet={setFoodSales}/>
                 </div>
               </div>

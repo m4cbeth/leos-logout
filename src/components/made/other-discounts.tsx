@@ -64,7 +64,7 @@ function Entry({
 
     const DiscountsDisplay = () => (
         jotVal.length > 0 && (
-            <ul className="font-thin">
+            <ul className="dark:font-thin">
                 {jotVal.map((item) => (
                     <li key={item}>- {item}</li>
                 ))}

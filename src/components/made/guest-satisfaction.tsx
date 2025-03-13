@@ -20,7 +20,7 @@ export function GuestSatisfactionDisplay () {
   const discounts = useAtomValue(guestSatisfactionAtom)
 
   return discounts.length > 0 && (
-    <ul className="font-thin">
+    <ul className="dark:font-thin">
       {discounts.map((item) => (
         <li className=" ml-10 list-[circle]" key={item}>{item}</li>
       ))}

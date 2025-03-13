@@ -52,7 +52,7 @@ export default function PercentageInput({jotSet, jotVal}) {
             value={input}
             onFocus={handleFocus}
             onChange={handleChange}
-            className="font-thin"
+            className="dark:font-thin"
         />
     )
 }

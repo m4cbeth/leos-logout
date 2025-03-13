@@ -24,7 +24,7 @@ export function ManagerDiscountDisplay () {
   
   
   return discounts.length > 0 && (
-    <ul className="font-thin">
+    <ul className="dark:font-thin">
       {discounts.map((item) => (
         <li key={item}>- {item}</li>
       ))}

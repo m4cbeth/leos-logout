@@ -27,7 +27,7 @@ const CurrencyInput = ({jotSet, jotVal = 0}) => {
   return (
     <Input
       jotSet={jotSet}
-      className="font-thin w-full"
+      className="dark:font-thin w-full"
       type="text"
       inputMode="numeric"
       value={displayValue}

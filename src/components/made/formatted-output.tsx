@@ -79,7 +79,7 @@ export function FormattedLogout() {
     )
 
     return (
-        <div className="formatted-output-block font-thin">
+        <div className="formatted-output-block dark:font-thin">
             <CopyButton />
 
 
@@ -139,60 +139,43 @@ export function FormattedLogout() {
             ▪︎ {takeoutIssues}
 
             <h2 className="mt-5">DISCOUNTS</h2>
-            <ul className="list-disc ml-7">
-                <li>Manager on shift (x100, x50)
-                    <ListCircles>
-                        <Listify jotVal={managerDiscounts} />
-                    </ListCircles>
-                </li>
-                <li>BOH on shift (x100, x50)
-                    <ListCircles>
-                        <Listify jotVal={BOHDiscount} />
-                    </ListCircles>
-                </li>
-                <li>FOH on shift (x50)
-                    <ListCircles>
-                        <Listify jotVal={FOHonShift} />
-                    </ListCircles>
-                </li>
-                <li>Staff not on shift (x25)
-                    <ListCircles>
-                        <Listify jotVal={staffOffShift} />
-                    </ListCircles>
-                </li>
-                <li>NBH (x10)
-                    <ListCircles>
-                        <Listify jotVal={NBH} />
-                    </ListCircles>
-                </li>
-                <li>Owners (x50)
-                    <ListCircles>
-                        <Listify jotVal={owners} />
-                    </ListCircles>
-                </li>
-                <li>Training Discount (x100)
-                    <ListCircles>
-                        <Listify jotVal={trainingDiscounts} />
-                    </ListCircles>
-                </li>
-                <li>Pint/Pickle cards/Team nachos (amount of cards/orders)
-                    <ListCircles>
-                        <li>                            
-                            Pint Cards: {pintCard}
-                        </li>
-                        <li>                            
-                            Pickle Cards: {pickleCard}
-                        </li>
-                        <li>                            
-                            Team Nachos: {teamNacho}
-                        </li>
-                    </ListCircles>
-                </li>
-                <li>
-                    Guest Satisfaction (% and reason)
-                        <GuestSatisfactionDisplay/>
-                </li>
-            </ul>
+
+            ● Manager on shift (x100, x50)
+            <ListCircles>
+                <Listify jotVal={managerDiscounts} />
+            </ListCircles>
+            ● BOH on shift (x100, x50)
+            <ListCircles>
+                <Listify jotVal={BOHDiscount} />
+            </ListCircles>
+            ● FOH on shift (x50)
+            <ListCircles>
+                <Listify jotVal={FOHonShift} />
+            </ListCircles>
+            ● Staff not on shift (x25)
+            <ListCircles>
+                <Listify jotVal={staffOffShift} />
+            </ListCircles>
+            ● NBH (x10)
+            <ListCircles>
+                <Listify jotVal={NBH} />
+            </ListCircles>
+            ● Owners (x50)
+            <ListCircles>
+                <Listify jotVal={owners} />
+            </ListCircles>
+            ● Training Discount (x100)
+            <ListCircles>
+                <Listify jotVal={trainingDiscounts} />
+            </ListCircles>
+            ● Pint/Pickle cards/Team nachos (amount of cards/orders)
+            <ListCircles>
+                    Pint Cards: {pintCard}
+                    Pickle Cards: {pickleCard}
+                    Team Nachos: {teamNacho}
+            </ListCircles>
+            ● Guest Satisfaction (% and reason)
+                <GuestSatisfactionDisplay/>
 
 
 
@@ -237,9 +220,14 @@ export function FormattedLogout() {
     )
 }
 
-const Listify = ({jotVal}) => (
+const Listify2 = ({jotVal}) => (
   <>
     {jotVal.length ? jotVal.map((entry) => <li key={entry}>{entry}</li>) : <li> </li>}
+  </>
+)
+const Listify = ({jotVal}) => (
+  <>
+    {jotVal.length ? jotVal.map((entry) => <div key={entry}>&#9;{entry}</div>) : <div> </div>}
   </>
 )
 
